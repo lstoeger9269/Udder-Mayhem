@@ -21,32 +21,19 @@ public class EquipScript : MonoBehaviour
     {
         if (Input.GetKeyDown("f"))
         {
-            UnequipObject();
-            Shoot();
+            EquipObject();
+            
         }
-    }
-
-    void Shoot ()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, range))
+        else if (Input.GetKeyDown("e"))
         {
-            Debug.Log(hit.transform.name);
-
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                EquipObject();
-            }
+            UnequipObject();
         }
+        
     }
 
-    void UnequipObject()
-    {
-        PlayerTransform.DetachChildren();
-        Gun.transform.eulerAngles = new Vector3(Gun.transform.eulerAngles.x, Gun.transform.eulerAngles.y, Gun.transform.eulerAngles.z - 45);
-        Gun.GetComponent<Rigidbody>().isKinematic = false;
-    }
+    
+
+    
 
     void EquipObject()
     {
@@ -54,5 +41,12 @@ public class EquipScript : MonoBehaviour
         Gun.transform.position = PlayerTransform.transform.position;
         Gun.transform.rotation = PlayerTransform.transform.rotation;
         Gun.transform.SetParent(PlayerTransform);
+    }
+
+    void UnequipObject()
+    {
+        PlayerTransform.DetachChildren();
+        Gun.transform.eulerAngles = new Vector3(Gun.transform.eulerAngles.x, Gun.transform.eulerAngles.y, Gun.transform.eulerAngles.z - 45);
+        Gun.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

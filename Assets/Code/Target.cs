@@ -5,7 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
-    public float drop = 2f;
+    public float drop = 0f;
 
     // Start is called before the first frame update
     void Start()
