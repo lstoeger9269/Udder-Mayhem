@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: b311e7864b1e38f429852a48042b047d
+guid: 26072959162992e4786934bea3151b48
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - PlayerTransform: {instanceID: 0}
-  - Gun: {fileID: 919132149155446097, guid: 976dd61e580b58647a035bbf7d5b850a, type: 3}
+  - Harm: {fileID: 919132149155446097, guid: 04122857f9a58734b9b7a1af9658ecc6, type: 3}
   - Camera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
