@@ -11,7 +11,6 @@ public class FPSControl : MonoBehaviour
     public float jumpPower = 7f;
     public float gravity = 10f;
 
-
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
 
@@ -20,7 +19,6 @@ public class FPSControl : MonoBehaviour
     float rotationX = 0;
 
     public bool canMove = true;
-
 
     CharacterController characterController;
     void Start()
