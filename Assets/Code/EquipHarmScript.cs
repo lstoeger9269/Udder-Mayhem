@@ -5,15 +5,18 @@ using UnityEngine;
 public class EquipHarmScript : MonoBehaviour
 {
     public Transform PlayerTransform;
+    public Transform PlayerTransform2;
     public GameObject Harm;
     public Camera Camera;
     public float range = 2f;
     public float open = 100f;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         Harm.GetComponent<Rigidbody>().isKinematic = true;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class EquipHarmScript : MonoBehaviour
         else if (Input.GetKeyDown("e")){
             UnequipHarm();
         }
+
     }
 
     void EquipHarm()
@@ -36,13 +40,15 @@ public class EquipHarmScript : MonoBehaviour
         Harm.transform.position = PlayerTransform.transform.position;
         Harm.transform.rotation = PlayerTransform.transform.rotation;
         Harm.transform.SetParent(PlayerTransform);
+        source.Play();
     }
 
     void UnequipHarm()
     {
-        PlayerTransform.DetachChildren();
-        Harm.transform.eulerAngles = new Vector3(Harm.transform.eulerAngles.x, Harm.transform.eulerAngles.y, Harm.transform.eulerAngles.z - 45);
-        Harm.GetComponent<Rigidbody>().isKinematic = false;
+        Harm.transform.position = PlayerTransform2.transform.position;
+        Harm.transform.rotation = PlayerTransform2.transform.rotation;
+        Harm.transform.SetParent(PlayerTransform2);
+        source.Stop();
     }
 
 }
