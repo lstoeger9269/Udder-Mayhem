@@ -5,6 +5,7 @@ using UnityEngine;
 public class EquipScript : MonoBehaviour
 {
     public Transform PlayerTransform;
+    public Transform GunHolster;
     public GameObject Gun;
     public Camera Camera;
     public float range = 2f;
@@ -45,8 +46,8 @@ public class EquipScript : MonoBehaviour
 
     void UnequipObject()
     {
-        PlayerTransform.DetachChildren();
-        Gun.transform.eulerAngles = new Vector3(Gun.transform.eulerAngles.x, Gun.transform.eulerAngles.y, Gun.transform.eulerAngles.z - 45);
-        Gun.GetComponent<Rigidbody>().isKinematic = false;
+        Gun.transform.position = GunHolster.transform.position;
+        Gun.transform.rotation = GunHolster.transform.rotation;
+        Gun.transform.SetParent(GunHolster);
     }
 }

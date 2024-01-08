@@ -19,10 +19,15 @@ public class Equip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
         if (Input.GetKeyDown("f"))
         {
-            UnequipObject();
+            EquipObject();
             Shoot();
+        }
+        else if (Input.GetKeyDown("g"))
+        {
+            UnequipObject();
         }
     }
 
