@@ -7,18 +7,32 @@ public class followharm : MonoBehaviour
     public GameObject FollowingObject;
     public GameObject OtherObject;
     public float speed;
+    bool harmonica;
+    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Input.GetKeyDown("f")){
-            Update1();
-        }
+    void Start(){
+        harmonica = false;
     }
 
-    // Update is called once per frame
-    void Update1()
-    {
-        FollowingObject.transform.position = Vector3.MoveTowards(FollowingObject.transform.position, OtherObject.transform.position, speed);
+    void Update(){
+
+        if (Input.GetKeyDown("g")){
+            harmonica = true;
+        }
+            
+        if (harmonica == true){
+                Follow();
+            }
+        if (Input.GetKeyDown("e")){
+            harmonica = false;
+        }
+
+    }
+
+    void Follow()
+    {    
+
+            FollowingObject.transform.position = Vector3.MoveTowards(FollowingObject.transform.position, OtherObject.transform.position, speed);
+
     }
 }
