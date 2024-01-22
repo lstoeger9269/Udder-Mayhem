@@ -11,11 +11,10 @@ public class MoveToObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         FollowingObject.transform.position = Vector3.MoveTowards(FollowingObject.transform.position, OtherObject.transform.position, speed);
     }
