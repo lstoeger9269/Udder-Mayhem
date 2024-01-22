@@ -8,26 +8,26 @@ public class EquipHarmScript : MonoBehaviour
     public Transform PlayerTransform2;
     public GameObject Harm;
     public Camera Camera;
-    public float range = 2f;
-    //public float open = 100f;
     private AudioSource sound;
+    public float pickUpRange;
+
 
     void Start()
     {
         Harm.GetComponent<Rigidbody>().isKinematic = true;
         sound = GetComponent<AudioSource>();
-      //  Vector 3 distanceToPlayer = player.position - transform.position;
+        //Vector3 distanceToPlayer = HarmTransform.position - transform.position;
 
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("g"))
-        {
-            EquipHarm();
+        Vector3 distanceToPlayer = HarmTransform.position - transform.position;
+        
+        if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange) 
+        
+        EquipHarm();
     
-
-        }
         else if (Input.GetKeyDown("e")){
             UnequipHarm();
         }
