@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour
     private AudioSource source;
     [SerializeField]GameObject bulletPrefab;
     [SerializeField]Transform bulletSpawnpos;
+    bool holding;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && holding = true)
         {
             Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
             source.Play();
