@@ -8,7 +8,6 @@ public class Shootgun : MonoBehaviour {
     public Rigidbody projectilePrefab;
     private AudioSource pew;
     public GameObject Bullet;
-    
    
  
     // Use this for initialization

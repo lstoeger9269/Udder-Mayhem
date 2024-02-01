@@ -9,7 +9,7 @@ public class Equip2 : MonoBehaviour
     public GameObject Gun;
     public Camera Camera;
     public float pickUpRange2;
-    public bool holding = false;
+    public bool holdingGun = false;
     
 
     // Start is called before the first frame update
@@ -26,13 +26,13 @@ public class Equip2 : MonoBehaviour
         if (Input.GetKeyDown("f") && distanceToPlayer.magnitude <= pickUpRange2)
         {
             EquipObject();
-            holding = true;
+            holdingGun = true;
             
         }
         else if (Input.GetKeyDown("e"))
         {
             UnequipObject();
-            holding = false;
+            holdingGun = false;
         }
         
     }
