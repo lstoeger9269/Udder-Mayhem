@@ -16,22 +16,25 @@ public class EquipHarmScript : MonoBehaviour
     {
         Harm.GetComponent<Rigidbody>().isKinematic = true;
         sound = GetComponent<AudioSource>();
-        //Vector3 distanceToPlayer = HarmTransform.position - transform.position;
 
     }
 
     void Update()
     {
         Vector3 distanceToPlayer = HarmTransform.position - transform.position;
-        
+
         if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange) 
         
         EquipHarm();
-    
-        else if (Input.GetKeyDown("e")){
+        
+        if (Input.GetKeyDown("e")){
             UnequipHarm();
         }
 
+        if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange) {
+        
+        EquipHarm();
+        }
     }
 
     void EquipHarm()

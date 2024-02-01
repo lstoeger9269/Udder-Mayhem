@@ -8,7 +8,7 @@ public class followharm : MonoBehaviour
     public GameObject OtherObject;
     public float speed;
     bool harmonica;
-    public float pickUpRange;
+    public float FollowRange;
     public Transform HarmTransform;
 
 
@@ -21,7 +21,7 @@ public class followharm : MonoBehaviour
         
         Vector3 distanceToPlayer = HarmTransform.position - transform.position;
 
-        if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange ){
+        if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= FollowRange ){
             harmonica = true;
         }
             

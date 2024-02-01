@@ -9,10 +9,6 @@ public class Shooting : MonoBehaviour
     [SerializeField]GameObject bulletPrefab;
     [SerializeField]Transform bulletSpawnpos;
 
-    public float NextTimeToFire = 0f;
-    
-    
-
     // Start is called before the first frame update
     void Start()
     {

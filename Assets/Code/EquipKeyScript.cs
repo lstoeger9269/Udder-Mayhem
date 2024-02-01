@@ -8,21 +8,31 @@ public class EquipKeyScript : MonoBehaviour
     public GameObject Key;
     public Camera Camera;
     public float pickUpRangeKey;
+    public Animator animatr;
 
 
     void Start()
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
+        animatr = GetComponent<Animator>();
+    }
+
+    void WhenKeyUse()
+    {
+        animatr.SetTrigger("onKeyUse");
     }
 
     void Update()
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey) 
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
         
         EquipKey();
-    
+
+            if (Input.GetKeyDown("x"))
+                WhenKeyUse();
+        }
     }
 
     void EquipKey()
@@ -32,5 +42,7 @@ public class EquipKeyScript : MonoBehaviour
         Key.transform.rotation = KeyTransform.transform.rotation;
         Key.transform.SetParent(KeyTransform);
     }
+
+
 
 }
