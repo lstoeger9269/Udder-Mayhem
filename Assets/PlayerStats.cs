@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
         //if the player presses the "K" key
         if (Input.GetKeyDown(KeyCode.K))
         {
-            TakeDamage(20f);
+            TakeDamage(5f);
         }
         if(currentHealth > maxHealth)
         {
@@ -48,7 +48,6 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("You died!");
         Destroy(gameObject);
     }
 
