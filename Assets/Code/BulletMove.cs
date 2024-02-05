@@ -18,7 +18,7 @@ public class BulletMove : MonoBehaviour
     
     void Awake()
     {
-        Destroy(gameObject, life);
+        //Destroy(gameObject, life);
     }
     
 
