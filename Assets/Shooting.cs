@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     private AudioSource source;
     [SerializeField]GameObject bulletPrefab;
     [SerializeField]Transform bulletSpawnpos;
+    float NextTimeToFire;
 
     // Start is called before the first frame update
     void Start()
