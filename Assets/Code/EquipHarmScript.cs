@@ -8,7 +8,7 @@ public class EquipHarmScript : MonoBehaviour
     public Transform PlayerTransform2;
     public GameObject Harm;
     public Camera Camera;
-    private AudioSource sound;
+    public AudioSource sound;
     public float pickUpRange;
 
 
