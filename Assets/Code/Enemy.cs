@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int EnemyHealth = 20;
-    public GameObject harmonicadrop;
+
 
 
     public void TakeDamage(int damageAmount)
@@ -20,13 +20,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        harmonicadrop.SetActive(false);
+
 
         
         if (EnemyHealth <= 0)
         {
             Destroy(gameObject);
-            harmonicadrop.SetActive(true);
+
         }
 
     }
