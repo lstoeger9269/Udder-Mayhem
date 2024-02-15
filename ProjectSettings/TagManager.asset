@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - key
   - democow
+  - Exit
+  - Follower
   layers:
   - Default
   - TransparentFX
