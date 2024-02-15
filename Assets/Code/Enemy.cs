@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int EnemyHealth = 20;
+    public GameObject bestharm;
 
 
 
@@ -20,12 +21,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-
+        bestharm.active = false;
         
         if (EnemyHealth <= 0)
         {
             Destroy(gameObject);
-
+            bestharm.active = true;
         }
 
     }
