@@ -5,9 +5,10 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onUpdate = null;
 
     public int EnemyHealth = 20;
+    public GameObject harmonicadrop;
+
 
     public void TakeDamage(int damageAmount)
     {
@@ -18,12 +19,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        harmonicadrop.SetActive(false);
+
         
         if (EnemyHealth <= 0)
         {
-            onUpdate?.Invoke();
             Destroy(gameObject);
-
+            harmonicadrop.SetActive(true);
         }
 
     }
