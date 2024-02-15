@@ -9,7 +9,7 @@ public class Equip2 : MonoBehaviour
     public GameObject Gun;
     public Camera Camera;
     public float pickUpRange2;
-    public bool holdingGun = false;
+    public static bool holdingGun = false;
     
 
     // Start is called before the first frame update

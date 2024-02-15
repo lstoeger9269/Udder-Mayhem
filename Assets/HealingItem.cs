@@ -5,8 +5,9 @@ using UnityEngine;
 public class HealingItem : MonoBehaviour
 {
     public GameObject healPrefab;
-
+    public GameObject Player;
     public float healAmount;
+    private System.Random rand = new System.Random();
 
     void Start()
     {
@@ -22,13 +23,23 @@ public class HealingItem : MonoBehaviour
         Instantiate(healPrefab, transform.position, Quaternion.identity);
     }
 
-    //when bacon touches player
-    private void OnTriggerEnter(Collider other)
+    IEnumerator Respawn (Collider collision, int time)
     {
-        if (other.CompareTag("Player"))
+        yield return new WaitForSeconds (time);
+        collision.gameObject.SetActive(true);
+
+    }
+
+    
+
+    //when bacon touches player
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Bacon"))
         {
-            other.GetComponent<PlayerStats>().Heal(healAmount);
-            Destroy(gameObject);
+            StartCoroutine(Respawn(collision,5));
+            collision.GetComponent<PlayerStats>().Heal(healAmount);
+            collision.gameObject.SetActive(false);
 
         }
     }

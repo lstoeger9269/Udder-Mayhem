@@ -20,7 +20,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire)
+        if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
         {
 
             NextTimeToFire = Time.time + 0.5f;

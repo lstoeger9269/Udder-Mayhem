@@ -16,10 +16,7 @@ public class BulletMove : MonoBehaviour
 
     }
     
-    void Awake()
-    {
-        //Destroy(gameObject, life);
-    }
+    
     
 
     private void OnCollisionEnter( Collision collision ) 
