@@ -7,10 +7,16 @@ public class nextscene : MonoBehaviour
 {
     public string scenename;
 
-    void OnTriggerEnter(Collider other)
+    void Start()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("next scene");
             SceneManager.LoadScene(scenename);
         }
     }

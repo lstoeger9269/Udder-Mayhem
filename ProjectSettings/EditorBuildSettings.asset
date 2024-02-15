@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Slaughterhouse/Slaughterhouse.unity
     guid: 7182782e39e1b9441bc12f986bd8a077
   - enabled: 1
-    path: Assets/Scenes/Slaughterhouse/Butcher Shop Boss.unity
+    path: Assets/Scenes/ButcherShopBoss.unity
     guid: cdf78fbc830c19e47b1edeb91c84d96b
   m_configObjects: {}
