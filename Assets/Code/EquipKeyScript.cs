@@ -8,18 +8,24 @@ public class EquipKeyScript : MonoBehaviour
     public GameObject Key;
     public Camera Camera;
     public float pickUpRangeKey;
-    public Animator animatr;
+    public GameObject open;
+    public GameObject open2;
+    public GameObject open3;
+    public bool fun;
+    public static bool move;
+    public Transform cageTransform;
+    public Transform cageTransform2;
+    public Transform cageTransform3;
+    public float useKeyRange;
+
+    
 
 
     void Start()
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
-        animatr = GetComponent<Animator>();
-    }
-
-    void WhenKeyUse()
-    {
-        animatr.SetTrigger("onKeyUse");
+        fun = false;
+        move = false;
     }
 
     void Update()
@@ -29,10 +35,28 @@ public class EquipKeyScript : MonoBehaviour
         if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
         
         EquipKey();
+        fun = true;
 
-            if (Input.GetKeyDown("x"))
-                WhenKeyUse();
         }
+        
+        Vector3 keyRange = KeyTransform.position - cageTransform.position;
+        Vector3 keyRange2 = KeyTransform.position - cageTransform2.position;
+        Vector3 keyRange3 = KeyTransform.position - cageTransform3.position;
+
+        if(Input.GetKeyDown("o") && fun == true && keyRange.magnitude <= useKeyRange){
+                open.GetComponent<Animator>().Play("cageanimation");
+                move = true;
+        }
+        
+        if(Input.GetKeyDown("o") && fun == true && keyRange2.magnitude <= useKeyRange){
+                open2.GetComponent<Animator>().Play("cageanimation");
+                move = true;
+        }
+        if(Input.GetKeyDown("o") && fun == true && keyRange3.magnitude <= useKeyRange){
+                open3.GetComponent<Animator>().Play("cageanimation");
+                move = true;
+        }
+        
     }
 
     void EquipKey()
@@ -41,8 +65,7 @@ public class EquipKeyScript : MonoBehaviour
         Key.transform.position = KeyTransform.transform.position;
         Key.transform.rotation = KeyTransform.transform.rotation;
         Key.transform.SetParent(KeyTransform);
+        
+  
     }
-
-
-
 }
