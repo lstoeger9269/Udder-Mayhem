@@ -9,6 +9,8 @@ TagManager:
   - democow
   - Exit
   - Follower
+  - Bacon
+  - ButcherBoss
   layers:
   - Default
   - TransparentFX

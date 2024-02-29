@@ -29,7 +29,7 @@ public class Equip2 : MonoBehaviour
             holdingGun = true;
             
         }
-        else if (Input.GetKeyDown("e"))
+        else if (Input.GetKeyDown("e") && holdingGun == true)
         {
             UnequipObject();
             holdingGun = false;
