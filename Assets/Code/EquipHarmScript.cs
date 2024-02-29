@@ -10,7 +10,7 @@ public class EquipHarmScript : MonoBehaviour
     public Camera Camera;
     public AudioSource sound;
     public float pickUpRange;
-
+    
 
     void Start()
     {
@@ -24,16 +24,16 @@ public class EquipHarmScript : MonoBehaviour
         Vector3 distanceToPlayer = HarmTransform.position - transform.position;
 
         if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange) 
-        
-        EquipHarm();
+            
+            EquipHarm();
         
         if (Input.GetKeyDown("e")){
             UnequipHarm();
         }
 
         if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= pickUpRange) {
-        
-        EquipHarm();
+              
+            EquipHarm();
         }
     }
 
