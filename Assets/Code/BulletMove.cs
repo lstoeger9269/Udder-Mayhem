@@ -29,8 +29,15 @@ public class BulletMove : MonoBehaviour
             Destroy(gameObject);
 
         }
-        
-        
+        if (collision.transform.tag == "ButcherBoss")
+        {
+            Debug.Log("ppppppw");
+            collision.gameObject.GetComponent<ButcherBoss>().TakeDamage(5);
+            Destroy(gameObject);
+
+
+        }
+
     }
     
 }
