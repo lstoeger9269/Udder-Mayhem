@@ -3,19 +3,22 @@ using UnityEngine;
 public class GunBehavior : MonoBehaviour
 {
     //Gun stats
-    public int damage;
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
-    public bool allowButonHold;
+    [SerializeField] public int damage;
+    [SerializeField] public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
+    [SerializeField] public int magazineSize, bulletsPerTap;
+    [SerializeField] public bool allowButonHold;
     int bulletsLeft, bulletsShot;
 
     bool shooting, readyToShoot, reloading;
 
     //Reference
-    public Camera Camera;
-    public Transform attackPoint;
-    public RaycastHit rayHit;
-    public LayerMask whatIsEnemy;
+    [SerializeField] public Camera Camera;
+    [SerializeField] public Transform attackPoint;
+    [SerializeField] public RaycastHit rayHit;
+    [SerializeField] public LayerMask whatIsEnemy;
+
+    //Graphics
+    [SerializeField] public GameObject muzzleFlash, bulletHoleGraphic;
 
     private void Awake()
     {
@@ -57,16 +60,17 @@ public class GunBehavior : MonoBehaviour
         Vector3 direction = Camera.transform.forward + new Vector3(x,y,0);
 
         //RayCast
-        //if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, direction, out rayHit, range, whatIsEnemy))
-        //{
-            //Debug.Log(rayHit.collider.name);
+        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out direction, rayHit, range, whatIsEnemy))
+        {
+            Debug.Log(rayHit.collider.name);
 
-            //if (rayHit.collider.CompareTag("Enemy"))
-            //{
-                //rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
-            //}
-        //}
+            if (rayHit.collider.CompareTag("Enemy"))
+                rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
+        }
 
+        //Graphics
+        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0,180,0));
+        Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
         bulletsLeft--;
         bulletsShot--;
 
