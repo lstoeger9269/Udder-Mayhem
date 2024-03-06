@@ -1929,20 +1929,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1585933122497187139, guid: 8697efe20c2b8c049957b8c0371e606c, type: 3}
   m_PrefabInstance: {fileID: 715084670}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &713665431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713665430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 875193c1b60e5bf4fb04b7b36c46be75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
-  bulletspeed: 100
 --- !u!136 &713665433
 CapsuleCollider:
   m_ObjectHideFlags: 0
