@@ -61,14 +61,12 @@ using UnityEngine;
         
 
         //RayCast
-        if (Physics.Raycast(FPSCam.transform.position, direction, out rayHit, range, whatIsEnemy))
+        if (Physics.Raycast(Camera.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
             Debug.Log(rayHit.collider.name);
-
+        
             if (rayHit.collider.CompareTag("Enemy"))
-            {
                 rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
-            }
         }
 
         //Graphics
