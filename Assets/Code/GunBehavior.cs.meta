@@ -3,7 +3,11 @@ guid: 7c440c15fb1a6184fb84348c2014ea26
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Camera: {instanceID: 0}
+  - attackPoint: {instanceID: 0}
+  - muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
+  - bulletHoleGraphic: {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
