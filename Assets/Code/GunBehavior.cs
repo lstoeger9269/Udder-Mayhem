@@ -1,24 +1,24 @@
 using UnityEngine;
 
-public class GunBehavior : MonoBehaviour
+[System.Serializable] public class GunBehavior : MonoBehaviour
 {
     //Gun stats
-    [SerializeField] public int damage;
-    [SerializeField] public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
-    [SerializeField] public int magazineSize, bulletsPerTap;
-    [SerializeField] public bool allowButonHold;
+    public int damage;
+    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
+    public int magazineSize, bulletsPerTap;
+    public bool allowButonHold;
     int bulletsLeft, bulletsShot;
 
     bool shooting, readyToShoot, reloading;
 
     //Reference
-    [SerializeField] public Camera Camera;
-    [SerializeField] public Transform attackPoint;
-    [SerializeField] public RaycastHit rayHit;
-    [SerializeField] public LayerMask whatIsEnemy;
+    public Camera FPSCam;
+    public Transform attackPoint;
+    public RaycastHit rayHit;
+    public LayerMask whatIsEnemy;
 
     //Graphics
-    [SerializeField] public GameObject muzzleFlash, bulletHoleGraphic;
+    public GameObject muzzleFlash, bulletHoleGraphic;
 
     private void Awake()
     {
@@ -37,10 +37,10 @@ public class GunBehavior : MonoBehaviour
         if (allowButonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
         
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        if (Input.GetKeyDown("r") && bulletsLeft < magazineSize && !reloading) Reload();
 
 
-        if (readyToShoot && shooting && reloading && bulletsLeft > 0)
+        if (Input.GetButtonDown("Fire1") && readyToShoot && shooting && reloading && bulletsLeft > 0)
         {
             bulletsShot = bulletsPerTap;
             Shoot();
@@ -57,13 +57,14 @@ public class GunBehavior : MonoBehaviour
         float y = Random.Range(-spread, spread);
 
         //Calculate Direction with Spread
-        Vector3 direction = Camera.transform.forward + new Vector3(x,y,0);
+        Vector3 direction = FPSCam.transform.forward + new Vector3(x,y,0);
+        
 
         //RayCast
-        if (Physics.Raycast(Camera.transform.position,  direction, out rayHit, range, whatIsEnemy))
+        if (Physics.Raycast(Camera.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
             Debug.Log(rayHit.collider.name);
-
+        
             if (rayHit.collider.CompareTag("Enemy"))
                 rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
         }
