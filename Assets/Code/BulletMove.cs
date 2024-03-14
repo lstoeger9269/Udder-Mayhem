@@ -6,6 +6,7 @@ public class BulletMove : MonoBehaviour
 {
 
     public float life = 3;
+    public float TakeDamage;
     Rigidbody rb;
     [SerializeField]float bulletspeed;
     // Start is called before the first frame update
@@ -29,15 +30,8 @@ public class BulletMove : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (collision.transform.tag == "ButcherBoss")
-        {
-            Debug.Log("ppppppw");
-            collision.gameObject.GetComponent<ButcherBoss>().TakeDamage(5);
-            Destroy(gameObject);
-
-
-        }
-
+        
+        
     }
     
 }

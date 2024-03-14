@@ -6,17 +6,22 @@ public class EquipKeyScript : MonoBehaviour
 {
     public Transform KeyTransform;
     public GameObject Key;
+    public GameObject Key2;
+    public GameObject Key3;
     public Camera Camera;
     public float pickUpRangeKey;
     public GameObject open;
     public GameObject open2;
     public GameObject open3;
     public bool fun;
+    public bool fun2;
+    public bool fun3;
     public static bool move;
     public Transform cageTransform;
     public Transform cageTransform2;
     public Transform cageTransform3;
     public float useKeyRange;
+    public int var;
 
     
 
@@ -25,6 +30,8 @@ public class EquipKeyScript : MonoBehaviour
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
         fun = false;
+        fun2 = false;
+        fun3 = false;
         move = false;
     }
 
@@ -32,13 +39,33 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var <= 5){
         
         EquipKey();
         fun = true;
 
         }
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 5 && var <= 10){
         
+        EquipKey2();
+        fun2 = true;
+        
+
+        }
+        
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 10 && var <= 15){
+        
+        EquipKey3();
+        fun3 = true;
+     
+
+        }
+
+        if (Input.GetKeyDown("m")){
+
+            var += 1;
+        }
+
         Vector3 keyRange = KeyTransform.position - cageTransform.position;
         Vector3 keyRange2 = KeyTransform.position - cageTransform2.position;
         Vector3 keyRange3 = KeyTransform.position - cageTransform3.position;
@@ -46,15 +73,18 @@ public class EquipKeyScript : MonoBehaviour
         if(Input.GetKeyDown("o") && fun == true && keyRange.magnitude <= useKeyRange){
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
+                Destroy(Key);
         }
         
-        if(Input.GetKeyDown("o") && fun == true && keyRange2.magnitude <= useKeyRange){
+        if(Input.GetKeyDown("o") && fun2 == true && keyRange2.magnitude <= useKeyRange){
                 open2.GetComponent<Animator>().Play("cageanimation");
                 move = true;
+                Destroy(Key2);
         }
-        if(Input.GetKeyDown("o") && fun == true && keyRange3.magnitude <= useKeyRange){
+        if(Input.GetKeyDown("o") && fun3 == true && keyRange3.magnitude <= useKeyRange){
                 open3.GetComponent<Animator>().Play("cageanimation");
                 move = true;
+                Destroy(Key3);
         }
         
     }
@@ -66,6 +96,23 @@ public class EquipKeyScript : MonoBehaviour
         Key.transform.rotation = KeyTransform.transform.rotation;
         Key.transform.SetParent(KeyTransform);
         
-  
+    }
+
+    void EquipKey2()
+    {
+        Key2.GetComponent<Rigidbody>().isKinematic = true;
+        Key2.transform.position = KeyTransform.transform.position;
+        Key2.transform.rotation = KeyTransform.transform.rotation;
+        Key2.transform.SetParent(KeyTransform);
+        
+    }
+
+    void EquipKey3()
+    {
+        Key3.GetComponent<Rigidbody>().isKinematic = true;
+        Key3.transform.position = KeyTransform.transform.position;
+        Key3.transform.rotation = KeyTransform.transform.rotation;
+        Key3.transform.SetParent(KeyTransform);
+        
     }
 }

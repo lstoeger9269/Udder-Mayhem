@@ -11,6 +11,7 @@ TagManager:
   - Follower
   - Bacon
   - ButcherBoss
+  - cowbox
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Obstacles
   - Navmesh
   - Enemies
-  - 
+  - followerlayer
   - 
   - 
   - 

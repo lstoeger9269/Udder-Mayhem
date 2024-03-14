@@ -12,9 +12,9 @@ public class PointCode : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Follower"))
+        //if (other.CompareTag("Follower"))
         {
-            other.GetComponent<CowPointIcon>().GainPoint();
+          //  other.GetComponent<CowPointIcon>().GainPoint();
         }
     }
 }

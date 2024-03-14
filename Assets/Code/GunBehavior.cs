@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GunBehavior : MonoBehaviour
+[System.Serializable] public class GunBehavior : MonoBehaviour
 {
     //Gun stats
     public int damage;
@@ -12,10 +12,13 @@ public class GunBehavior : MonoBehaviour
     bool shooting, readyToShoot, reloading;
 
     //Reference
-    public Camera Camera;
+    public Camera FPSCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
+
+    //Graphics
+    public GameObject muzzleFlash, bulletHoleGraphic;
 
     private void Awake()
     {
@@ -34,10 +37,10 @@ public class GunBehavior : MonoBehaviour
         if (allowButonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
         
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        if (Input.GetKeyDown("r") && bulletsLeft < magazineSize && !reloading) Reload();
 
 
-        if (readyToShoot && shooting && reloading && bulletsLeft > 0)
+        if (Input.GetButtonDown("Fire1") && readyToShoot && shooting && reloading && bulletsLeft > 0)
         {
             bulletsShot = bulletsPerTap;
             Shoot();
@@ -54,19 +57,21 @@ public class GunBehavior : MonoBehaviour
         float y = Random.Range(-spread, spread);
 
         //Calculate Direction with Spread
-        Vector3 direction = Camera.transform.forward + new Vector3(x,y,0);
+        Vector3 direction = FPSCam.transform.forward + new Vector3(x,y,0);
+        
 
         //RayCast
-        //if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, direction, out rayHit, range, whatIsEnemy))
-        //{
-            //Debug.Log(rayHit.collider.name);
+        if (Physics.Raycast(Camera.transform.position, direction, out rayHit, range, whatIsEnemy))
+        {
+            Debug.Log(rayHit.collider.name);
+        
+            if (rayHit.collider.CompareTag("Enemy"))
+                rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+        }
 
-            //if (rayHit.collider.CompareTag("Enemy"))
-            //{
-                //rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
-            //}
-        //}
-
+        //Graphics
+        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0,180,0));
+        Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
         bulletsLeft--;
         bulletsShot--;
 

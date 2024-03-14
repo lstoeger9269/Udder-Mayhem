@@ -9,10 +9,12 @@ public class Shootgun : MonoBehaviour {
     private AudioSource pew;
     public GameObject Bullet;
    
- 
+    private Recoil Recoil_Script;
+    
     // Use this for initialization
     void Start () {
         pew = GetComponent<AudioSource>();
+        Recoil_Script = transform.Find("Camera").GetComponent<Recoil>();
    
     }
    
@@ -26,6 +28,7 @@ public class Shootgun : MonoBehaviour {
             hitPlayer = Instantiate(projectilePrefab, transform.position, transform.rotation) as Rigidbody;
             hitPlayer.velocity = transform.TransformDirection(Vector3.forward * 100);
             pew.Play();
+            Recoil_Script.RecoilFire();
  
    
         }
