@@ -60,12 +60,12 @@ public class GunBehavior : MonoBehaviour
         Vector3 direction = Camera.transform.forward + new Vector3(x,y,0);
 
         //RayCast
-        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out direction, rayHit, range, whatIsEnemy))
+        if (Physics.Raycast(Camera.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
             Debug.Log(rayHit.collider.name);
-
+        
             if (rayHit.collider.CompareTag("Enemy"))
-                rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
+                rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
         }
 
         //Graphics
