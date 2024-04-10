@@ -25,9 +25,7 @@ public class BossAnimation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetBool("isAttacking", true);
-            System.Threading.Thread.Sleep(1000);
-            anim.SetBool("isAttacking",false);
+            //anim.Trigger("isAttacking", true);
         }
     }
 }
