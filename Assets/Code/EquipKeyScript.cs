@@ -22,6 +22,7 @@ public class EquipKeyScript : MonoBehaviour
     public Transform cageTransform3;
     public float useKeyRange;
     public int var;
+    public GameObject cowtext;
 
     
 
@@ -33,6 +34,7 @@ public class EquipKeyScript : MonoBehaviour
         fun2 = false;
         fun3 = false;
         move = false;
+        cowtext.active = false;
     }
 
     void Update()
@@ -45,7 +47,7 @@ public class EquipKeyScript : MonoBehaviour
         fun = true;
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 5 && var <= 10){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 9 && var <= 10){
         
         EquipKey2();
         fun2 = true;
@@ -53,7 +55,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 10 && var <= 15){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 14){
         
         EquipKey3();
         fun3 = true;
@@ -74,6 +76,8 @@ public class EquipKeyScript : MonoBehaviour
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key);
+                cowtext.active = true;
+
         }
         
         if(Input.GetKeyDown("o") && fun2 == true && keyRange2.magnitude <= useKeyRange){

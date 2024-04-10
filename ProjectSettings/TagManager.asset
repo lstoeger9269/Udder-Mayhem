@@ -12,6 +12,8 @@ TagManager:
   - Bacon
   - ButcherBoss
   - cowbox
+  - cowbox2
+  - cowbox3
   layers:
   - Default
   - TransparentFX
