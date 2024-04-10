@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class BossAnimation : MonoBehaviour
 {
-    Animator animator;
+    bool Running;
+    Animator anim;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        Running = true;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKey("w"))
+        if (Running=true)
         {
-            animator.SetBool("isRunning", true);
+            anim.SetBool("isRunning", true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            anim.SetBool("isAttacking", true);
+            System.Threading.Thread.Sleep(1000);
+            anim.SetBool("isAttacking",false);
         }
     }
 }
