@@ -421,8 +421,8 @@ namespace UnityEngine.Rendering.PostProcessing
             // otherwise the camera is rendering the scenes in the SceneManager.
             var customScene = camera.scene;
             return customScene.IsValid();
-                //? UnityEditor.SceneManagement.EditorSceneManager.IsGameObjectInScene(volume.gameObject, customScene)
-                //: UnityEditor.SceneManagement.EditorSceneManager.IsGameObjectInMainScenes(volume.gameObject);
+                ? UnityEditor.SceneManagement.EditorSceneManager.IsGameObjectInScene(volume.gameObject, customScene)
+                : UnityEditor.SceneManagement.EditorSceneManager.IsGameObjectInMainScenes(volume.gameObject);
 #else
             return true;
 #endif
