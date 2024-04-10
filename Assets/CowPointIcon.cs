@@ -12,42 +12,44 @@ public class CowPointIcon : MonoBehaviour
     public GameObject icon1;
     public GameObject icon2;
     public GameObject icon3;
-    public int value;
+
 
     void Start()
     {
 
     }
-
+  
 
     void OnTriggerEnter(Collider other){
 
-    if(other.CompareTag ("cowbox") && value <= 0){
+    if(other.CompareTag ("cowbox")){
+
 
           Destroy(icon1);
           Destroy(follower);
-          value += 1;
+          
       }
-    }
+    
 
-    void OnTriggerEnter2(Collider other){
+    //void OnTriggerEnter2(Collider other2){
 
 
-    if(other.CompareTag ("cowbox") && value == 1){
+    else if(other.CompareTag ("cowbox")){
 
           Destroy(icon2);
           Destroy(follower2);
-          value += 1;
-    }
 
-    }
+      }
+
+    //}
     
-    void OnTriggerEnter3(Collider other){
+   // void OnTriggerEnter3(Collider other3){
 
-    if(other.CompareTag ("cowbox") && value == 2){
+    else if(other.CompareTag ("cowbox")){
 
           Destroy(icon3);
           Destroy(follower3);
       }
-    }   
-}    
+    //}
+}
+}

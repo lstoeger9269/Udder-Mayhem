@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Gun2 : MonoBehaviour
 {
-    public float damage = 10f;
+    public int damage = 3;
     public float range = 100f;
     public ParticleSystem muzzleFlash;
-
+    public ParticleSystem BulletImpactStoneEffect;
 
     public Camera FPSCam;
 
@@ -29,10 +29,11 @@ public class Gun2 : MonoBehaviour
 
             muzzleFlash.Play();
             
-            //if (hit.collider.CompareTag("Enemy"))
-            //{
-                //hit.collider.GetComponent<Enemy>().TakeDamage(damage);
-            //}
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                BulletImpactStoneEffect.Play();
+                hit.collider.GetComponent<Enemy>().TakeDamage(damage);
+            }
         }
 
 

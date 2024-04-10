@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     [SerializeField]GameObject bulletPrefab;
     [SerializeField]Transform bulletSpawnpos;
     public float NextTimeToFire = 0;
+    public ParticleSystem muzzleFlash;
     
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Shooting : MonoBehaviour
         {
 
             NextTimeToFire = Time.time + 0.5f;
+            muzzleFlash.Play();
             Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
             source.Play();
 
