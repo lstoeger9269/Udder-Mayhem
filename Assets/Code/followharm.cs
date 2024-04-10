@@ -27,7 +27,8 @@ public class followharm : MonoBehaviour
             
         if (harmonica == true && EquipKeyScript.move == true){
                 Follow();
-            }
+        }
+        
         if (Input.GetKeyDown("e")){
             harmonica = false;
         }
@@ -37,7 +38,7 @@ public class followharm : MonoBehaviour
     void Follow()
     {    
 
-            FollowingObject.transform.position = Vector3.MoveTowards(FollowingObject.transform.position, OtherObject.transform.position, speed);
+        FollowingObject.transform.position = Vector3.MoveTowards(FollowingObject.transform.position, OtherObject.transform.position, speed);
 
     }
 }
