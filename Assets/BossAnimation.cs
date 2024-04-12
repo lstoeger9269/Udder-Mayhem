@@ -10,7 +10,7 @@ public class BossAnimation : MonoBehaviour
     void Start()
     {
         Running = true;
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class BossAnimation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //anim.Trigger("isAttacking", true);
+            anim.SetTrigger("attack");
         }
     }
 }

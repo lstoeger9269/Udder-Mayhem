@@ -20,9 +20,10 @@ public class FollowWithGravity : MonoBehaviour
         float distance = Vector3.Distance(transform.position, targetObject.position);
 
         // Apply gravity
-        rb.AddForce(Vector3.down * gravityScale, ForceMode.Acceleration);
+        rb.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
 
         // Move the object towards the target
-        rb.velocity = direction * Mathf.Min(distance, followSpeed);
+        Vector3 targetPosition = targetObject.position - (direction * Mathf.Max(0, distance - followSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(targetPosition);
     }
 }
