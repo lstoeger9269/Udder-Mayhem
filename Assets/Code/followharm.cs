@@ -23,15 +23,18 @@ public class followharm : MonoBehaviour
 
         if (Input.GetKeyDown("g") && distanceToPlayer.magnitude <= FollowRange ){
             harmonica = true;
+
         }
             
-        if (harmonica == true && EquipKeyScript.move == true){
+            if (harmonica == true && EquipKeyScript.move == true){
                 Follow();
-        }
-        
-        if (Input.GetKeyDown("e")){
-            harmonica = false;
-        }
+                print("bonk");
+            }
+            
+                if (Input.GetKeyDown("e")){
+                    harmonica = false;
+
+                }
 
     }
 
