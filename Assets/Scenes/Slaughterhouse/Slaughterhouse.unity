@@ -1437,7 +1437,6 @@ GameObject:
   - component: {fileID: 346110786}
   - component: {fileID: 346110785}
   - component: {fileID: 346110784}
-  - component: {fileID: 346110783}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -1461,19 +1460,6 @@ Transform:
   m_Father: {fileID: 881353330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 88.013, z: 0}
---- !u!114 &346110783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346110781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5798a6939d77e4040817c2b8d136e07e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenename: ButcherShopBoss
 --- !u!65 &346110784
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3249,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60bb2fcdddc94834786120f2241c4abd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -105.86
+      value: -99.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60bb2fcdddc94834786120f2241c4abd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4132,6 +4118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2080329203}
   enemyInterval: 3
+  times: 0
 --- !u!4 &881353330
 Transform:
   m_ObjectHideFlags: 0
@@ -4356,7 +4343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39a461ce1504c4649893acec7da537c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.3
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39a461ce1504c4649893acec7da537c7, type: 3}
       propertyPath: m_LocalPosition.z

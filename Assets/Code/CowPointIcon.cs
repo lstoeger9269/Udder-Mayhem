@@ -22,11 +22,11 @@ public class CowPointIcon : MonoBehaviour
     } 
    
     private void OnCollisionEnter(Collision collision){
-      print("bonk");
       if (collision.gameObject.name == "follower"){
 
         Destroy(follower);
         Destroy (icon1);
+       // forSpawn = 1;
       }
     
 
@@ -34,6 +34,7 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
+       // forSpawn = 2;
       }
 
       if (collision.gameObject.name == "follower (3)"){
