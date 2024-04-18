@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyspawner : MonoBehaviour
 {
-
+    public bool destroyOrNo;
     [SerializeField]
     private GameObject enemy;
 
@@ -13,42 +13,52 @@ public class enemyspawner : MonoBehaviour
     public int times;
     private int timesLimit = 2;
 
+
     void Start()
     {
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
         enemy.active = false;
-    }
 
+        if (other.CompareTag("follower")){
+            other.GetComponent<CowPointIcon>().destroying(destroyOrNo);
+        }
+
+
+    }
     private IEnumerator spawnEnemy(float interval, GameObject enemy){
-while (times <= timesLimit){
+
+    void EnemySpawn1(){
+        while (times<=timesLimit){
 
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-        newEnemy.active = true;
         times++;
         StartCoroutine(spawnEnemy(interval, enemy));
+        }
     }
-    
-    
-    if (times >= 5 && times <= 8){
+        void EnemySpawn2(){
+        while (times<=timesLimit){
+    if (times >= 5 && times <= 8 ){
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-        newEnemy.active = true;
         times++;
         StartCoroutine(spawnEnemy(interval, enemy));
-
-
+    }
+    }
+        }
+        void EnemySpawn3(){
+        while (times<=timesLimit){
+           if (times >= 10 && times <= 13){
+          yield return new WaitForSeconds(interval);
+          GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
+          newEnemy.active = true;
+          times++;
+          StartCoroutine(spawnEnemy(interval, enemy));
+        }
     }
 
-    if (times >= 10 && times <= 13){
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-        newEnemy.active = true;
-        times++;
-        StartCoroutine(spawnEnemy(interval, enemy));
-
-
+        }   
     }
-
 }
-}
+
+  

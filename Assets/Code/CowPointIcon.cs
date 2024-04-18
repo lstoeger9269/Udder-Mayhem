@@ -19,20 +19,28 @@ public class CowPointIcon : MonoBehaviour
     void Start()
     {
         blockagetext.active = false;
+        GetComponent<enemyspawner>().EnemySpawn1();
+
     } 
-   
+        
+
     private void OnCollisionEnter(Collision collision){
       if (collision.gameObject.name == "follower"){
 
         Destroy(follower);
         Destroy (icon1);
+        GetComponent<enemyspawner>().EnemySpawn2();
+
+
       }
     
-
+    
       if (collision.gameObject.name == "follower (2)"){
 
         Destroy(follower2);
         Destroy (icon2);
+        GetComponent<enemyspawner>().EnemySpawn3();
+
       }
 
       if (collision.gameObject.name == "follower (3)"){
@@ -44,5 +52,5 @@ public class CowPointIcon : MonoBehaviour
       }
 
   }
-
+   
 }

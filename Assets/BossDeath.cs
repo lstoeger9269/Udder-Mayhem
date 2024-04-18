@@ -8,17 +8,17 @@ public class BossDeath : MonoBehaviour
     [SerializeField] private float maxHealth;
 
     private float currentHealth;
-    public BossBar bossBar;
+   // public BossBar bossBar;
     private void Start()
     {
         currentHealth = maxHealth;
 
-        bossBar.SetSliderMax(maxHealth);
+      //  bossBar.SetSliderMax(maxHealth);
     }
 
     void TakeDamage(){
         currentHealth -= 5;
-        bossBar.SetSlider(currentHealth);
+      //  bossBar.SetSlider(currentHealth);
     }
 
     // Update is called once per frame
