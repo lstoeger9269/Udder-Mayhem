@@ -26,7 +26,6 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower);
         Destroy (icon1);
-       // forSpawn = 1;
       }
     
 
@@ -34,7 +33,6 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
-       // forSpawn = 2;
       }
 
       if (collision.gameObject.name == "follower (3)"){
