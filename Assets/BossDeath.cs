@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossDeath : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
 
     private float currentHealth;
-
     public BossBar bossBar;
     private void Start()
     {
         currentHealth = maxHealth;
 
         bossBar.SetSliderMax(maxHealth);
+    }
+
+    void TakeDamage(){
+        currentHealth -= 5;
+        bossBar.SetSlider(currentHealth);
     }
 
     // Update is called once per frame
@@ -35,11 +40,6 @@ public class BossDeath : MonoBehaviour
         {
             TakeDamage();
         }
-    }
-
-    void TakeDamage(){
-        currentHealth -= 5;
-        bossBar.SetSlider(currentHealth);
     }
 
     void Die(){
