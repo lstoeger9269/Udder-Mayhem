@@ -8393,9 +8393,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1176062191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26c490cea8e7fc44b2fe0a57c4d379c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8088aaec3f5ef43f2af7567a69b8b004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossSlider: {fileID: 1176062194}
 --- !u!1 &1215020479
 GameObject:
   m_ObjectHideFlags: 0
@@ -10784,7 +10785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e56c89267809140a890555fbd835e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1636540287
+--- !u!114 &1636540289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10793,9 +10794,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1636540273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313a2b84716754fc48d8851cde4cb63f, type: 3}
+  m_Script: {fileID: 11500000, guid: 534b800d0da984b3c8dd1365bfcfd581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  bossBar: {fileID: 1176062195}
 --- !u!1 &1681147892
 GameObject:
   m_ObjectHideFlags: 0
@@ -12698,8 +12701,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.207946, y: 4.338539, z: 1.4507849}
-  m_Center: {x: -0.010394905, y: 0.50148964, z: 0.14074025}
+  m_Size: {x: 2.207946, y: 6.160225, z: 1.4507849}
+  m_Center: {x: -0.010394905, y: 1.4123336, z: 0.14074025}
 --- !u!95 &1989883883
 Animator:
   serializedVersion: 4
