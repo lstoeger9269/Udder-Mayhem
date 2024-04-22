@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public GameObject Camera;
+    public GameObject DeathCam;
+
+    Animator anim;
     [SerializeField] private float maxHealth;
 
     private float currentHealth;
@@ -15,6 +19,8 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
 
         healthBar.SetSliderMax(maxHealth);
+
+        anim=gameObject.GetComponent<Animator>();
     }
 
     public void TakeDamage(float amount)
@@ -48,6 +54,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        anim.SetTrigger("isDead");
+        Camera.SetActive(false);
+        DeathCam.SetActive(true);
     }
 }
