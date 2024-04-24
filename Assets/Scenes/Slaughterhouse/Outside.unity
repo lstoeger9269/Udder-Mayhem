@@ -984,6 +984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b409d0a39e0cf46ab85964643d663b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  DeathCam: {fileID: 0}
   maxHealth: 100
   healthBar: {fileID: 1505233688}
 --- !u!65 &229176314
@@ -1017,18 +1019,6 @@ MonoBehaviour:
   Camera: {fileID: 576043742}
   sound: {fileID: 1101034177}
   pickUpRange: 9
---- !u!114 &229176316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229176302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558db96da3cca40d4b2f0b509425b211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &277964059
 PrefabInstance:
   m_ObjectHideFlags: 0
