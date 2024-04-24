@@ -22,7 +22,6 @@ public class CowPointIcon : MonoBehaviour
     } 
    
     private void OnCollisionEnter(Collision collision){
-      print("bonk");
       if (collision.gameObject.name == "follower"){
 
         Destroy(follower);

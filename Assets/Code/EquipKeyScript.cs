@@ -41,7 +41,7 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var <= 5){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 4 && var <= 5){
         
         EquipKey();
         fun = true;
@@ -76,7 +76,7 @@ public class EquipKeyScript : MonoBehaviour
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key);
-                cowtext.active = true;
+               // cowtext.active = true;
 
         }
         
