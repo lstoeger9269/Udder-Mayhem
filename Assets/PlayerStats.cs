@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     private float currentHealth;
 
     public HealthBar healthBar;
+    
 
     private void Start()
     {
@@ -36,7 +37,9 @@ public class PlayerStats : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
+            
             Die();
+            
         }
     }
 
@@ -51,3 +54,4 @@ public class PlayerStats : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
