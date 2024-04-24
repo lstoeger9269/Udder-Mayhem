@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public GameObject Camera;
+    public GameObject DeathCam;
+
+    bool dead = false;
+
+    Animator anim;
     [SerializeField] private float maxHealth;
 
     private float currentHealth;
@@ -11,11 +17,13 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     
 
-    private void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
 
         healthBar.SetSliderMax(maxHealth);
+
+        anim=gameObject.GetComponent<Animator>();
     }
 
     public void TakeDamage(float amount)
@@ -24,7 +32,7 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetSlider(currentHealth);
     }
 
-    private void Update()
+    public void Update()
     {
         //if the player presses the "K" key
         if (Input.GetKeyDown(KeyCode.K))
@@ -39,7 +47,8 @@ public class PlayerStats : MonoBehaviour
         {
             
             Die();
-            
+            Debug.Log("player died");
+            dead = true;
         }
     }
 
@@ -49,9 +58,14 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetSlider(currentHealth);
     }
 
-    private void Die()
+    public void Die()
     {
-        Destroy(gameObject);
+        if(dead = true){
+            //GetComponent<Emote>().Dead();
+        //Emote.Dead();
+        }
+        Camera.SetActive(false);
+        DeathCam.SetActive(true);
     }
 }
 
