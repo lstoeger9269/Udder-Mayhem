@@ -22,6 +22,7 @@ public class CowPointIcon : MonoBehaviour
     public float enemyInterval = 4f;
     public int times;
     public int timesLimit = 2;
+    public int killCount = 0;
 
 
     void Start()
@@ -29,6 +30,8 @@ public class CowPointIcon : MonoBehaviour
         blockagetext.active = false;
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
         enemy.active = false;
+
+
     } 
         
 
@@ -75,6 +78,11 @@ public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
         times++;
         newEnemy.active = true;
         StartCoroutine(spawnEnemy(enemyInterval, enemy));
+
+
+      if (newEnemy.gameObject == null){
+        killCount += 1 ;
+    }
               
       }
 
@@ -82,12 +90,16 @@ public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
     } 
 public IEnumerator spawnEnemy2(float enemyInterval, GameObject enemy){
 
+  if (times >= 5 ){
+
           yield return new WaitForSeconds(enemyInterval);
           GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
           times++;
+          newEnemy.active = true;
+
           StartCoroutine(spawnEnemy(enemyInterval, enemy));
       }
-
+}
 
       
 public IEnumerator spawnEnemy3(float enemyInterval, GameObject enemy){
@@ -98,7 +110,6 @@ public IEnumerator spawnEnemy3(float enemyInterval, GameObject enemy){
           times++;
           StartCoroutine(spawnEnemy(enemyInterval, enemy));
         }
-
 
   
 
