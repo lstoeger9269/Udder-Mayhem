@@ -26,15 +26,14 @@ public class followharm : MonoBehaviour
 
         }
             
-            if (harmonica == true && EquipKeyScript.move == true){
-                Follow();
-                print("bonk");
-            }
-            
-                if (Input.GetKeyDown("e")){
-                    harmonica = false;
+        if (harmonica == true && EquipKeyScript.move == true){
+            Follow();
+        }
+        
+        if (Input.GetKeyDown("e")){
+            harmonica = false;
 
-                }
+        }
 
     }
 

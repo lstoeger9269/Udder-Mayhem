@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f334af00964b046d7945d3f8cfbf2c3c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -750,8 +750,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 16
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 2.5
@@ -760,7 +760,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &114913395
 MonoBehaviour:
@@ -1017,6 +1017,18 @@ MonoBehaviour:
   Camera: {fileID: 576043742}
   sound: {fileID: 1101034177}
   pickUpRange: 9
+--- !u!114 &229176316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229176302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558db96da3cca40d4b2f0b509425b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &277964059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,7 +2055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515000730}
   m_LocalRotation: {x: -0, y: -0.004442541, z: -0, w: 0.99999017}
-  m_LocalPosition: {x: 98.8, y: 2.72, z: -21.2}
+  m_LocalPosition: {x: 98.8, y: 2.08, z: -21.2}
   m_LocalScale: {x: 7.4678454, y: 10.298203, z: 10.298203}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5011,7 +5023,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743436054}
-  m_LocalRotation: {x: -0.013386627, y: 0.012860981, z: -0.06313547, w: 0.9978323}
+  m_LocalRotation: {x: -0.013403006, y: 0.012876717, z: -0.06313544, w: 0.9978319}
   m_LocalPosition: {x: 1.1200016, y: -0.7099999, z: 2.2600026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6158,90 +6170,6 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1387282250}
   BulletImpactStoneEffect: {fileID: 0}
   FPSCam: {fileID: 576043742}
---- !u!1 &1945026569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1945026572}
-  - component: {fileID: 1945026570}
-  - component: {fileID: 1945026571}
-  m_Layer: 0
-  m_Name: FPSCam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!20 &1945026570
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945026569}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &1945026571
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945026569}
-  m_Enabled: 1
---- !u!4 &1945026572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945026569}
-  m_LocalRotation: {x: -0, y: -0.014978573, z: -0, w: 0.9998879}
-  m_LocalPosition: {x: -0.07989526, y: 1.4300003, z: 3.5301924}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 229176305}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: -15.995, z: 0}
 --- !u!1 &1974403112
 GameObject:
   m_ObjectHideFlags: 0

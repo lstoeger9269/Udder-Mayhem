@@ -76,7 +76,6 @@ public class EquipKeyScript : MonoBehaviour
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key);
-               // cowtext.active = true;
 
         }
         
