@@ -82,7 +82,6 @@ public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
     } 
 public IEnumerator spawnEnemy2(float enemyInterval, GameObject enemy){
 
-        if (times >= 5 && times <= 8 ){
           yield return new WaitForSeconds(enemyInterval);
           GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
           times++;
@@ -90,11 +89,9 @@ public IEnumerator spawnEnemy2(float enemyInterval, GameObject enemy){
       }
 
 
-    }
       
 public IEnumerator spawnEnemy3(float enemyInterval, GameObject enemy){
 
-        if (times >= 10 && times <= 13){
           yield return new WaitForSeconds(enemyInterval);
           GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
           newEnemy.active = true;
@@ -103,7 +100,7 @@ public IEnumerator spawnEnemy3(float enemyInterval, GameObject enemy){
         }
 
 
-    }
+  
 
         }   
 
