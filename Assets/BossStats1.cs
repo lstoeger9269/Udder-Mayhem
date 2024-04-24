@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats2 : MonoBehaviour
+public class BossStats1 : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
 
@@ -14,15 +14,15 @@ public class PlayerStats2 : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        bossBar.SetSliderMax(maxHealth);
+        //bossBar.SetSliderMax(maxHealth);
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("bullet(Clone)"))
+        if (other.CompareTag(""))
         {
-            TakeDamage(100);
+            other.GetComponent<Enemy>().TakeDamage(10);
         }
-    }
+    }*/
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
@@ -31,7 +31,6 @@ public class PlayerStats2 : MonoBehaviour
 
     private void Update()
     {
-        //if the player presses the "K" key
         if(currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
