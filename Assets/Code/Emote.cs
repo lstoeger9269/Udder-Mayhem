@@ -10,13 +10,13 @@ public class Emote : MonoBehaviour
 
     Animator anim;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         anim=gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
             Emoting();
@@ -24,15 +24,20 @@ public class Emote : MonoBehaviour
             Stop();        
     }
 
-    void Emoting(){
+    public void Emoting(){
         Camera.SetActive(false);
         EmoteCam.SetActive(true);
         anim.SetBool("isEmoting", true);
     }
 
-    void Stop(){
+    public void Stop(){
         Camera.SetActive(true);
         EmoteCam.SetActive(false);
         anim.SetBool("isEmoting", false);
+    }
+
+    public void Dead()
+    {
+        anim.SetTrigger("isDead");
     }
 }
