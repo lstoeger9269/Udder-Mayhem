@@ -2701,6 +2701,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!1 &667070755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4265,6 +4266,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!1 &902565036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4797,6 +4799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b409d0a39e0cf46ab85964643d663b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  DeathCam: {fileID: 0}
   maxHealth: 100
   healthBar: {fileID: 979115257}
 --- !u!65 &951634816
@@ -5323,6 +5327,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!65 &1095791518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5585,10 +5590,11 @@ MonoBehaviour:
   icon3: {fileID: 647660721}
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
-  enemy: {fileID: 0}
+  enemy: {fileID: 2080329203}
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!114 &1246459488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5761,6 +5767,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!1 &1312526351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04122857f9a58734b9b7a1af9658ecc6, type: 3}
@@ -6193,6 +6200,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!65 &1422708386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6456,6 +6464,7 @@ MonoBehaviour:
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!1 &1580960105
 GameObject:
   m_ObjectHideFlags: 0
@@ -7481,10 +7490,11 @@ MonoBehaviour:
   icon3: {fileID: 647660721}
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
-  enemy: {fileID: 0}
+  enemy: {fileID: 2080329203}
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!1 &1806478919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,10 +7799,11 @@ MonoBehaviour:
   icon3: {fileID: 647660721}
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
-  enemy: {fileID: 0}
+  enemy: {fileID: 2080329203}
   enemyInterval: 0
   times: 0
   timesLimit: 2
+  killCount: 0
 --- !u!65 &1914754494
 BoxCollider:
   m_ObjectHideFlags: 0
