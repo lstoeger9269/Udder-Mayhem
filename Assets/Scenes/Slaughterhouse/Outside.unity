@@ -755,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 20
   bestharm: {fileID: 1101034168}
+  enemyguy: {fileID: 114913371}
 --- !u!136 &114913376
 CapsuleCollider:
   m_ObjectHideFlags: 0
