@@ -32,6 +32,12 @@ public class CowPointIcon : MonoBehaviour
 
 
     } 
+
+    void Update(){
+      if (Input.GetKeyDown(KeyCode.P)){
+            GetComponent<EnemySpawner>().SpawnEnemies();
+      }
+    }
         
 
     private void OnCollisionEnter(Collision collision){
@@ -40,6 +46,7 @@ public class CowPointIcon : MonoBehaviour
         Destroy(follower);
         Destroy (icon1);
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
+        GetComponent<EnemySpawner>().SpawnEnemies();
 
 
 
