@@ -14,6 +14,7 @@ TagManager:
   - cowbox
   - cowbox2
   - cowbox3
+  - Bullet
   layers:
   - Default
   - TransparentFX

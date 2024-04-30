@@ -24,11 +24,14 @@ public class CowPointIcon : MonoBehaviour
     public int timesLimit = 2;
 
 
+
     void Start()
     {
         blockagetext.active = false;
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
         enemy.active = false;
+
+
     } 
         
 
@@ -37,7 +40,7 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower);
         Destroy (icon1);
-        StartCoroutine(spawnEnemy2(enemyInterval,enemy));
+        StartCoroutine(spawnEnemy(enemyInterval,enemy));
 
 
 
@@ -48,7 +51,7 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
-        StartCoroutine(spawnEnemy3(enemyInterval,enemy));
+        StartCoroutine(spawnEnemy(enemyInterval,enemy));
 
 
       }
@@ -65,7 +68,6 @@ public class CowPointIcon : MonoBehaviour
 
   }
 
-//time could be pointless, play with that
 public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
 
       while (times <= timesLimit){
@@ -75,32 +77,12 @@ public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
         times++;
         newEnemy.active = true;
         StartCoroutine(spawnEnemy(enemyInterval, enemy));
+
               
       }
 
 
     } 
-public IEnumerator spawnEnemy2(float enemyInterval, GameObject enemy){
 
-          yield return new WaitForSeconds(enemyInterval);
-          GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-          times++;
-          StartCoroutine(spawnEnemy(enemyInterval, enemy));
-      }
-
-
-      
-public IEnumerator spawnEnemy3(float enemyInterval, GameObject enemy){
-
-          yield return new WaitForSeconds(enemyInterval);
-          GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-          newEnemy.active = true;
-          times++;
-          StartCoroutine(spawnEnemy(enemyInterval, enemy));
-        }
-
-
-  
-
-        }   
+  }   
 
