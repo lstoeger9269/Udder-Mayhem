@@ -1025,6 +1025,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!65 &261750114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2279,6 +2283,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!54 &517136016
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2589,6 +2597,10 @@ MonoBehaviour:
   useKeyRange: 0
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 0}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!65 &610778384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2698,10 +2710,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!1 &667070755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 881353330}
   - component: {fileID: 881353331}
+  - component: {fileID: 881353332}
   m_Layer: 0
   m_Name: enemyspawner
   m_TagString: Untagged
@@ -4263,10 +4275,43 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
+--- !u!114 &881353332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881353328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c212d1a1744e5479891cbae10537d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyTransform: {fileID: 0}
+  Key: {fileID: 0}
+  Key2: {fileID: 0}
+  Key3: {fileID: 0}
+  Camera: {fileID: 0}
+  pickUpRangeKey: 0
+  open: {fileID: 0}
+  open2: {fileID: 0}
+  open3: {fileID: 0}
+  fun: 0
+  fun2: 0
+  fun3: 0
+  cageTransform: {fileID: 0}
+  cageTransform2: {fileID: 0}
+  cageTransform3: {fileID: 0}
+  useKeyRange: 0
+  var: 0
+  cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!1 &902565036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4767,6 +4812,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!95 &935380241
 Animator:
   serializedVersion: 4
@@ -5324,10 +5373,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!65 &1095791518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5591,10 +5639,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!114 &1246459488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5764,10 +5811,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!1 &1312526351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04122857f9a58734b9b7a1af9658ecc6, type: 3}
@@ -6188,7 +6234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theSpot: {fileID: 1422708383}
-  follower: {fileID: 0}
+  follower: {fileID: 1246459485}
   follower2: {fileID: 1890954525}
   follower3: {fileID: 1806229078}
   icon1: {fileID: 1577586265}
@@ -6196,11 +6242,10 @@ MonoBehaviour:
   icon3: {fileID: 647660721}
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
-  enemy: {fileID: 0}
-  enemyInterval: 0
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!65 &1422708386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6461,10 +6506,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!1 &1580960105
 GameObject:
   m_ObjectHideFlags: 0
@@ -7090,6 +7134,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!54 &1753275473
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7491,10 +7539,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!1 &1806478919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7800,10 +7847,9 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
-  killCount: 0
 --- !u!65 &1914754494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8259,6 +8305,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!65 &2077877023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8425,6 +8475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealth: 3
   bestharm: {fileID: 539943790}
+  enemyguy: {fileID: 0}
 --- !u!65 &2118820527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8663,6 +8714,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!1 &919132148108483170
 GameObject:
   m_ObjectHideFlags: 0
@@ -8769,6 +8824,10 @@ MonoBehaviour:
   useKeyRange: 13
   var: 0
   cowtext: {fileID: 601159659}
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
+  times: 0
+  timesLimit: 2
 --- !u!54 &919132148108483174
 Rigidbody:
   m_ObjectHideFlags: 0
