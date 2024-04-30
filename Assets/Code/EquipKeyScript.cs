@@ -24,6 +24,13 @@ public class EquipKeyScript : MonoBehaviour
     public int var;
     public GameObject cowtext;
 
+    //[SerializeField]
+    public GameObject enemy;
+    public float enemyInterval = 1;
+    public int times;
+    public int timesLimit = 5;
+
+
     
 
 
@@ -35,19 +42,24 @@ public class EquipKeyScript : MonoBehaviour
         fun3 = false;
         move = false;
         cowtext.active = false;
+        StartCoroutine(spawnEnemy(enemyInterval, enemy));
+        enemy.active = false;
+        times = 1;
+
+
     }
 
     void Update()
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 4 && var <= 5){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 5 && var <= 6){
         
         EquipKey();
         fun = true;
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 9 && var <= 10){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 10 && var <= 11){
         
         EquipKey2();
         fun2 = true;
@@ -55,7 +67,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 14){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 15){
         
         EquipKey3();
         fun3 = true;
@@ -118,4 +130,24 @@ public class EquipKeyScript : MonoBehaviour
         Key3.transform.SetParent(KeyTransform);
         
     }
+
+    public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
+
+      if (times <= timesLimit){
+
+        yield return new WaitForSeconds(enemyInterval);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
+        times++;
+        print(times);
+        newEnemy.active = true;
+
+
+              
+      }
+
+
+    } 
+
+
+
 }
