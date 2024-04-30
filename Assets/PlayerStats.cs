@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     private float currentHealth;
 
     public HealthBar healthBar;
+    
 
     public void Start()
     {
@@ -44,6 +45,7 @@ public class PlayerStats : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
+            
             Die();
             Debug.Log("player died");
             dead = true;
@@ -66,3 +68,4 @@ public class PlayerStats : MonoBehaviour
         DeathCam.SetActive(true);
     }
 }
+

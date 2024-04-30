@@ -14,7 +14,7 @@ public class BossStats1 : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        bossBar.SetSliderMax(maxHealth);
+        //bossBar.SetSliderMax(maxHealth);
     }
     /*private void OnTriggerEnter(Collider other)
     {
