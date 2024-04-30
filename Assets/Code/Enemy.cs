@@ -9,17 +9,26 @@ public class Enemy : MonoBehaviour
 
     public int EnemyHealth = 20;
     public GameObject bestharm;
+    public GameObject enemyguy;
+
+    Animator anim;
+
+    Rigidbody rb;
 
 
+    void Start(){
+        rb = GetComponent<Rigidbody>();
+    }
 
     public void TakeDamage(int damageAmount)
     {
         EnemyHealth -= damageAmount;
+        anim = gameObject.GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
         bestharm.active = false;
