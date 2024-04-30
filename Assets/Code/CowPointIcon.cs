@@ -18,10 +18,11 @@ public class CowPointIcon : MonoBehaviour
     [SerializeField]
     public GameObject enemy;
 
+    //[SerializeField]
     public float enemyInterval = 4f;
     public int times;
     public int timesLimit = 2;
-    public int killCount = 0;
+
 
 
     void Start()
@@ -39,6 +40,7 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower);
         Destroy (icon1);
+        StartCoroutine(spawnEnemy(enemyInterval,enemy));
 
 
 
@@ -49,6 +51,7 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
+        StartCoroutine(spawnEnemy(enemyInterval,enemy));
 
 
       }
@@ -75,10 +78,11 @@ public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
         newEnemy.active = true;
         StartCoroutine(spawnEnemy(enemyInterval, enemy));
 
-
               
       }
 
 
     } 
-}
+
+  }   
+
