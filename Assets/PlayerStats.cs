@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerStats : MonoBehaviour
 {
@@ -49,6 +51,7 @@ public class PlayerStats : MonoBehaviour
             Die();
             Debug.Log("player died");
             dead = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

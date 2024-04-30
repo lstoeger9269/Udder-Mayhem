@@ -35,17 +35,14 @@ public class Enemy : MonoBehaviour
         
         if (EnemyHealth <= 0)
         {
-            if(enemyguy.tag == "Enemy"){
-                anim.SetTrigger("isDead");
-                bestharm.active = true;
-                Destroy(gameObject);
+            if (gameObject.CompareTag("ButcherBoss")){
+                gameObject.GetComponent<BossStats1>().TakeDamage(5);
             }
             else{
                 Destroy(gameObject);
                 bestharm.active = true;
             }
-
-
+            
         }
 
     }
