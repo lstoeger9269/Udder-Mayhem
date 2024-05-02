@@ -19,7 +19,7 @@ public class BossStats1 : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(""))
+         if (other.CompareTag("Bullet"))
         {
             other.GetComponent<Enemy>().TakeDamage(10);
         }
