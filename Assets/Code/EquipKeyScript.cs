@@ -53,13 +53,13 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 5 && var <= 6){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 4 && var <= 5){
         
         EquipKey();
         fun = true;
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 10 && var <= 11){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 9 && var <= 10){
         
         EquipKey2();
         fun2 = true;
@@ -67,7 +67,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 15){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 14){
         
         EquipKey3();
         fun3 = true;
@@ -102,6 +102,14 @@ public class EquipKeyScript : MonoBehaviour
                 Destroy(Key3);
         }
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Key"){
+            EquipKey();
+            Debug.Log("key equiped");
+        }
     }
 
     void EquipKey()

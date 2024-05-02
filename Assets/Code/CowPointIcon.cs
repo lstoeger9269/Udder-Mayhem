@@ -34,9 +34,6 @@ public class CowPointIcon : MonoBehaviour
     } 
 
     void Update(){
-      if (Input.GetKeyDown(KeyCode.P)){
-            GetComponent<EnemySpawner>().SpawnEnemies();
-      }
     }
         
 
@@ -46,10 +43,7 @@ public class CowPointIcon : MonoBehaviour
         Destroy(follower);
         Destroy (icon1);
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
-        GetComponent<EnemySpawner>().SpawnEnemies();
-
-
-
+        Debug.Log("follower escaped");
       }
     
     
