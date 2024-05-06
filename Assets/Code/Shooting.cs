@@ -8,6 +8,11 @@ public class Shooting : MonoBehaviour
     private AudioSource source;
     [SerializeField]GameObject bulletPrefab;
     [SerializeField]Transform bulletSpawnpos;
+    [SerializeField]GameObject BulletIcon;
+    [SerializeField]GameObject BulletIcon1;
+    [SerializeField]GameObject BulletIcon2;
+    [SerializeField]GameObject BulletIcon3;
+    [SerializeField]GameObject BulletIcon4;
     public float NextTimeToFire = 0;
     public ParticleSystem muzzleFlash;
     public float ammo;
@@ -26,7 +31,7 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
             {
-
+                
                 ammo--;
                 NextTimeToFire = Time.time + 0.5f;
                 muzzleFlash.Play();
