@@ -40,5 +40,4 @@ public class Emote : MonoBehaviour
     {
         anim.SetTrigger("isDead");
     }
-
 }

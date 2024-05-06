@@ -28,10 +28,13 @@ public class CowPointIcon : MonoBehaviour
     void Start()
     {
         blockagetext.active = false;
-        enemy.active = false;
+        //enemy.active = false;
 
 
     } 
+
+    void Update(){
+    }
         
 
     private void OnCollisionEnter(Collision collision){
@@ -40,9 +43,7 @@ public class CowPointIcon : MonoBehaviour
         Destroy(follower);
         Destroy (icon1);
         StartCoroutine(spawnEnemy(enemyInterval,enemy));
-
-
-
+        Debug.Log("follower escaped");
       }
     
     

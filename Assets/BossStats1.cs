@@ -9,18 +9,17 @@ public class BossStats1 : MonoBehaviour
     private float currentHealth;
 
     public BossBar bossBar;
-    Rigidbody rb;
-
+    
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
         currentHealth = maxHealth;
 
         bossBar.SetSliderMax(maxHealth);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(""))
+         if (other.CompareTag("Bullet"))
         {
             other.GetComponent<Enemy>().TakeDamage(10);
         }
@@ -48,8 +47,5 @@ public class BossStats1 : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Freeze()
-    {
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-    }
+    
 }
