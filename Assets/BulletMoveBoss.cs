@@ -25,7 +25,7 @@ public class BulletMoveBoss : MonoBehaviour
         
         if (collision.transform.tag == "ButcherBoss")
         {
-            Debug.Log("bullet hit");
+            //Debug.Log("bullet hit");
 
             if (collision.gameObject.CompareTag("ButcherBoss")){
                 collision.gameObject.GetComponent<BossStats1>().TakeDamage(5);

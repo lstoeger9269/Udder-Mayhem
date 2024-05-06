@@ -9,20 +9,21 @@ public class BossStats1 : MonoBehaviour
     private float currentHealth;
 
     public BossBar bossBar;
-
+    
     private void Start()
     {
+        
         currentHealth = maxHealth;
 
-        //bossBar.SetSliderMax(maxHealth);
+        bossBar.SetSliderMax(maxHealth);
     }
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(""))
+         if (other.CompareTag("Bullet"))
         {
             other.GetComponent<Enemy>().TakeDamage(10);
         }
-    }*/
+    }
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
@@ -45,4 +46,6 @@ public class BossStats1 : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
 }
