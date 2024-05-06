@@ -1778,6 +1778,7 @@ MonoBehaviour:
   bulletSpawnpos: {fileID: 1870562217}
   NextTimeToFire: 0
   muzzleFlash: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
+  ammo: 0
 --- !u!4 &379131052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8d1bda4dc3be5b49bb667adbae8ed3b, type: 3}
@@ -3363,7 +3364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60bb2fcdddc94834786120f2241c4abd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -99.3
+      value: -129.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60bb2fcdddc94834786120f2241c4abd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4326,7 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToClone: {fileID: 2080329203}
-  enemyToClone2: {fileID: 2080329203}
+  enemy: {fileID: 2080329203}
 --- !u!1 &902565036
 GameObject:
   m_ObjectHideFlags: 0

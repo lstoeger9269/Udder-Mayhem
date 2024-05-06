@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToClone;
+    public GameObject enemy;
+
     
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,10 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)){
+            enemy.active = true;
             SpawnEnemies();
+            enemy.active = false;
+
         }
     
     }
