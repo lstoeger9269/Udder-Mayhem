@@ -24,6 +24,13 @@ public class EquipKeyScript : MonoBehaviour
     public int var;
     public GameObject cowtext;
 
+    //[SerializeField]
+    public GameObject enemy;
+    public float enemyInterval = 1;
+    public int times;
+    public int timesLimit = 5;
+
+
     
 
 
@@ -35,6 +42,11 @@ public class EquipKeyScript : MonoBehaviour
         fun3 = false;
         move = false;
         cowtext.active = false;
+        StartCoroutine(spawnEnemy(enemyInterval, enemy));
+        enemy.active = false;
+        times = 1;
+
+
     }
 
     void Update()
@@ -89,7 +101,18 @@ public class EquipKeyScript : MonoBehaviour
                 move = true;
                 Destroy(Key3);
         }
+        if(Input.GetKeyDown(KeyCode.O)){
+            EquipKey();
+        }
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Key"){
+            EquipKey();
+            Debug.Log("key equiped");
+        }
     }
 
     void EquipKey()
@@ -118,4 +141,24 @@ public class EquipKeyScript : MonoBehaviour
         Key3.transform.SetParent(KeyTransform);
         
     }
+
+    public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
+
+      if (times <= timesLimit){
+
+        yield return new WaitForSeconds(enemyInterval);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
+        times++;
+        print(times);
+        newEnemy.active = true;
+
+
+              
+      }
+
+
+    } 
+
+
+
 }
