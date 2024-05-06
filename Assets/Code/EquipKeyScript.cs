@@ -151,14 +151,6 @@ public class EquipKeyScript : MonoBehaviour
         times++;
         print(times);
         newEnemy.active = true;
-
-
-              
       }
-
-
     } 
-
-
-
 }
