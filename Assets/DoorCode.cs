@@ -19,11 +19,11 @@ public class DoorCode : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "follower"){
+        if(collision.gameObject.tag == "follower"){
             Destroy(follower);
             Destroy (icon1);
             Debug.Log("follower escaped");
-            GetComponent<EnemySpawner>().CowSaved();
+            GetComponent<EnemySpawner>().SpawnEnemies();
         }
     }
 }

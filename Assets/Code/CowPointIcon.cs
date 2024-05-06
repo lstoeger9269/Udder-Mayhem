@@ -28,7 +28,7 @@ public class CowPointIcon : MonoBehaviour
     void Start()
     {
         blockagetext.active = false;
-        enemy.active = false;
+        //enemy.active = false;
 
 
     } 

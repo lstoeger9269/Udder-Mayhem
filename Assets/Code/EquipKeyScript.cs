@@ -101,6 +101,9 @@ public class EquipKeyScript : MonoBehaviour
                 move = true;
                 Destroy(Key3);
         }
+        if(Input.GetKeyDown(KeyCode.O)){
+            EquipKey();
+        }
         
     }
 
