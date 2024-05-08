@@ -16,22 +16,44 @@ public class Shooting : MonoBehaviour
     public float NextTimeToFire = 0;
     public ParticleSystem muzzleFlash;
     public float ammo;
+    public bool reloading;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        reloading = false;
         source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ammo > 0)
+        if (ammo > 0 )
         {
             if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
             {
                 
+                if (ammo == 5)
+                {
+                    BulletIcon4.active = false;
+                }
+                if (ammo == 4)
+                {
+                    BulletIcon3.active = false;
+                }
+                if (ammo == 3)
+                {
+                    BulletIcon2.active = false;
+                }
+                if (ammo == 2)
+                {
+                    BulletIcon1.active = false;
+                }
+                if (ammo == 1)
+                {
+                    BulletIcon.active = false;
+                }
                 ammo--;
                 NextTimeToFire = Time.time + 0.5f;
                 muzzleFlash.Play();
@@ -41,16 +63,25 @@ public class Shooting : MonoBehaviour
 
             }
         }
-        else
+        else if (ammo == 0 && reloading == false)
         {
+
             Invoke ("Reload", 3);
+            reloading = false;
         }
         
     }
 
     public void Reload()
     {
-        ammo = 7;
+        reloading = true;
+        BulletIcon.active = true;
+        BulletIcon1.active = true;
+        BulletIcon2.active = true;
+        BulletIcon3.active = true;
+        BulletIcon4.active = true;
+        ammo = 5;
+        
 
     }
 }
