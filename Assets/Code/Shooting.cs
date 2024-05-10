@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     [SerializeField]Transform bulletSpawnpos;
     public float NextTimeToFire = 0;
     public ParticleSystem muzzleFlash;
+    public float ammo;
     
 
     // Start is called before the first frame update
@@ -21,14 +22,30 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
+        if (ammo > 0)
         {
+            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
+            {
 
-            NextTimeToFire = Time.time + 0.5f;
-            muzzleFlash.Play();
-            Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
-            source.Play();
+                ammo--;
+                NextTimeToFire = Time.time + 0.5f;
+                muzzleFlash.Play();
+                Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
+                source.Play();
+            
 
+            }
         }
+        else
+        {
+            Invoke ("Reload", 3);
+        }
+        
+    }
+
+    public void Reload()
+    {
+        ammo = 7;
+
     }
 }
