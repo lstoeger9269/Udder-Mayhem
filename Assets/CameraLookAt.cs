@@ -1,28 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraLookAt : MonoBehaviour
 {
     public Transform target;
-    public float turnSpeed = .01f;
-    Quaternion rotGoal;
-    Vector3 direction;
-    bool looking = false;
+    public float smoothSpeed = 5f; 
+    private bool isLocked = false;
+    private Quaternion targetRotation;
 
-    void Update(){
-        if(looking){
-            direction = (target.position - transform.position).normalized;
-            rotGoal = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotGoal, turnSpeed);
+    void Update()
+    {
+        if (isLocked)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
         }
     }
-    private void OnTriggerStay(Collider collider)
+
+    void OnTriggerEnter(Collider other)
     {
-        if (collider.CompareTag("Tree"))
+        if (other.CompareTag("Tree"))
         {
-            Debug.Log("Collided with tree");
-            looking = true;
+            LockOnTarget();
+        }
+        else
+        {
+            isLocked = false;
+        }
+    }
+
+    private void LockOnTarget()
+    {
+        if (!isLocked)
+        {
+            isLocked = true;
+            Vector3 direction = target.position - transform.position;
+            targetRotation = Quaternion.LookRotation(direction);
         }
     }
 }
