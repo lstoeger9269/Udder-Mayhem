@@ -13,22 +13,17 @@ public class CowPointIcon : MonoBehaviour
     public GameObject icon3;
     public GameObject blockage;
     public GameObject blockagetext;
+    public GameObject enemyspawner;
 
 
-    [SerializeField]
     public GameObject enemy;
-
-    //[SerializeField]
-    public float enemyInterval = 4f;
-    public int times;
-    public int timesLimit = 4;
 
 
 
     void Start()
     {
         blockagetext.active = false;
-        //enemy.active = false;
+        enemy.active = false;
 
 
     } 
@@ -42,8 +37,11 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower);
         Destroy (icon1);
-        StartCoroutine(spawnEnemy(enemyInterval,enemy));
         Debug.Log("follower escaped");
+        enemy.active = true; 
+        enemyspawner.GetComponent<EnemySpawner>().SpawnEnemies();
+        enemy.active = false;
+
       }
     
     
@@ -51,7 +49,9 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
-        StartCoroutine(spawnEnemy(enemyInterval,enemy));
+        enemy.active = true; 
+        enemyspawner.GetComponent<EnemySpawner>().SpawnEnemies();
+        enemy.active = false;
 
 
       }
@@ -68,19 +68,6 @@ public class CowPointIcon : MonoBehaviour
 
   }
 
-  public IEnumerator spawnEnemy(float enemyInterval, GameObject enemy){
-
-      if (times <= timesLimit){
-
-        yield return new WaitForSeconds(enemyInterval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-3f, 7), Random.Range(-3f, 7f), -89), Quaternion.identity);
-        times++;
-        newEnemy.active = true;
-              
-      }
-
-
-    } 
 
   }   
 

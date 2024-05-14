@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToClone;
+    public GameObject enemy;
+    public int spawnVar;
+
     
     // Start is called before the first frame update
     void Start()
@@ -16,7 +19,10 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)){
+            enemy.active = true;
             SpawnEnemies();
+            enemy.active = false;
+
         }
     
     }
@@ -24,10 +30,15 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies(){
         Debug.Log("Enemies summoned");
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
     }
 
 }
