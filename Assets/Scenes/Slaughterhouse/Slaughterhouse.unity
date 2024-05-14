@@ -2710,7 +2710,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!1 &667070755
@@ -4276,7 +4276,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!114 &881353332
@@ -4326,7 +4326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToClone: {fileID: 2080329203}
-  enemyToClone2: {fileID: 2080329203}
 --- !u!1 &902565036
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,7 +5387,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!65 &1095791518
@@ -5654,7 +5653,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!114 &1246459488
@@ -5826,7 +5825,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!1 &1312526351 stripped
@@ -6243,13 +6242,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422708383}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63df5e1b58ca11541bc07a28b484704a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   theSpot: {fileID: 1422708383}
-  follower: {fileID: 0}
+  follower: {fileID: 1246459485}
   follower2: {fileID: 1890954525}
   follower3: {fileID: 1806229078}
   icon1: {fileID: 1577586265}
@@ -6257,8 +6256,8 @@ MonoBehaviour:
   icon3: {fileID: 647660721}
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
-  enemy: {fileID: 0}
-  enemyInterval: 0
+  enemy: {fileID: 2080329203}
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!65 &1422708386
@@ -6536,7 +6535,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 0}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!1 &1580960105
@@ -7569,7 +7568,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!1 &1806478919
@@ -7877,7 +7876,7 @@ MonoBehaviour:
   blockage: {fileID: 1013648282}
   blockagetext: {fileID: 51094070}
   enemy: {fileID: 2080329203}
-  enemyInterval: 0
+  enemyInterval: 4
   times: 0
   timesLimit: 2
 --- !u!65 &1914754494
