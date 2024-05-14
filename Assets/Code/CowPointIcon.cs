@@ -13,9 +13,9 @@ public class CowPointIcon : MonoBehaviour
     public GameObject icon3;
     public GameObject blockage;
     public GameObject blockagetext;
+    public GameObject enemyspawner;
 
 
-    [SerializeField]
     public GameObject enemy;
 
 
@@ -37,8 +37,11 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower);
         Destroy (icon1);
-        StartCoroutine(spawnEnemy(enemyInterval,enemy));
         Debug.Log("follower escaped");
+        enemy.active = true; 
+        enemyspawner.GetComponent<EnemySpawner>().SpawnEnemies();
+        enemy.active = false;
+
       }
     
     
@@ -46,7 +49,9 @@ public class CowPointIcon : MonoBehaviour
 
         Destroy(follower2);
         Destroy (icon2);
-        StartCoroutine(spawnEnemy(enemyInterval,enemy));
+        enemy.active = true; 
+        enemyspawner.GetComponent<EnemySpawner>().SpawnEnemies();
+        enemy.active = false;
 
 
       }

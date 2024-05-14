@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToClone;
     public GameObject enemy;
+    public int spawnVar;
 
     
     // Start is called before the first frame update
@@ -29,10 +30,15 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies(){
         Debug.Log("Enemies summoned");
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
     }
 
 }

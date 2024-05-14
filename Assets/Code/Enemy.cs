@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject bestharm;
     public GameObject enemyguy;
 
+
     Animator anim;
 
     Rigidbody rb;
@@ -44,6 +45,8 @@ public class Enemy : MonoBehaviour
             }
             
         }
+
+    
 
     }
 }
