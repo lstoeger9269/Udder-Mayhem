@@ -22,6 +22,10 @@ public class Emote : MonoBehaviour
             Emoting();
         else if (Input.GetKeyUp(KeyCode.X))
             Stop();        
+        if (Input.GetKeyDown(KeyCode.Z))
+            Breakdancing();
+        else if (Input.GetKeyUp(KeyCode.Z))
+            Stop();     
     }
 
     public void Emoting(){
@@ -34,10 +38,17 @@ public class Emote : MonoBehaviour
         Camera.SetActive(true);
         EmoteCam.SetActive(false);
         anim.SetBool("isEmoting", false);
+        anim.SetBool("isBreakdancing", false);
     }
 
     public void Dead()
     {
         anim.SetTrigger("isDead");
+    }
+
+    public void Breakdancing(){
+        Camera.SetActive(false);
+        EmoteCam.SetActive(true);
+        anim.SetBool("isBreakdancing", true);
     }
 }
