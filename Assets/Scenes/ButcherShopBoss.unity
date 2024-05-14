@@ -8071,7 +8071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 1283073652}
-  walkSpeed: 2.5
+  walkSpeed: 3.8
   runSpeed: 7
   jumpPower: 5
   gravity: 10
@@ -11216,10 +11216,10 @@ MonoBehaviour:
   BulletIcon2: {fileID: 1680344961}
   BulletIcon3: {fileID: 964973066}
   BulletIcon4: {fileID: 1756614927}
-  NextTimeToFire: 0
+  NextTimeToFire: 5
   muzzleFlash: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
   ammo: 5
-  reloading: 0
+  reloading: 1
 --- !u!82 &1681538766
 AudioSource:
   m_ObjectHideFlags: 0

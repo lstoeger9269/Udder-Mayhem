@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     {
         if (ammo > 0 )
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
+            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true && reloading == false)
             {
                 
                 if (ammo == 5)
@@ -67,7 +67,7 @@ public class Shooting : MonoBehaviour
         {
 
             Invoke ("Reload", 3);
-            reloading = false;
+            
         }
         
     }
@@ -81,6 +81,7 @@ public class Shooting : MonoBehaviour
         BulletIcon3.active = true;
         BulletIcon4.active = true;
         ammo = 5;
+        reloading = false;
         
 
     }
