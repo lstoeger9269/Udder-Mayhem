@@ -12,7 +12,10 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        enemy.active = true;
         SpawnEnemies();
+        enemy.active = false;
     }
 
     // Update is called once per frame
