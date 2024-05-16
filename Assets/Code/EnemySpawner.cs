@@ -5,18 +5,26 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToClone;
+    public GameObject enemy;
+    public int spawnVar;
+    public GameObject enemyBox;
+
     
-    // Start is called before the first frame update
     void Start()
     {
+
+        enemy.active = true;
         SpawnEnemies();
+        enemy.active = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)){
+            enemy.active = true;
             SpawnEnemies();
+            enemy.active = false;
+
         }
     
     }
@@ -24,10 +32,22 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemies(){
         Debug.Log("Enemies summoned");
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
         Instantiate(enemyToClone, transform.position, transform.rotation);
+        spawnVar++;
+    }
+    
+    public void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.tag == "Enemy"){
+            spawnVar--;
+    
     }
 
+}
 }

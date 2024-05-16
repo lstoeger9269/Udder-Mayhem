@@ -6,6 +6,7 @@ public class BulletMove : MonoBehaviour
 {
 
     public float life = 3;
+    public int newVar;
     public float TakeDamage;
     Rigidbody rb;
     [SerializeField]float bulletspeed;
@@ -28,6 +29,9 @@ public class BulletMove : MonoBehaviour
 
             collision.gameObject.GetComponent<Enemy>().TakeDamage(5);
             Destroy(gameObject);
+            newVar ++;
+            print(newVar);
+
 
         }
         
