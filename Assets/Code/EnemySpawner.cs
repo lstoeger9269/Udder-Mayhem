@@ -7,7 +7,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyToClone;
     public GameObject enemy;
     public int spawnVar;
-    public GameObject enemyBox;
+    public bool key1;
+    public bool key2;
+    public bool key3;
+    public GameObject Key;
+    public GameObject Key2;
+    public GameObject Key3;
+
 
     
     void Start()
@@ -16,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.active = true;
         SpawnEnemies();
         enemy.active = false;
+        KeyShowUp();
     }
 
     void Update()
@@ -26,6 +33,13 @@ public class EnemySpawner : MonoBehaviour
             enemy.active = false;
 
         }
+        if (spawnVar == 10){
+            Key2ShowUp();
+        }
+        if(spawnVar == 15){
+            Key3ShowUp();
+        }
+        
     
     }
 
@@ -43,11 +57,29 @@ public class EnemySpawner : MonoBehaviour
         spawnVar++;
     }
     
-    public void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.tag == "Enemy"){
-            spawnVar--;
-    
-    }
+    public void KeyShowUp(){
+        if(spawnVar == 5){
+            print("delete");
+            key1 = true;
+        // gameObject.GetComponent<EquipKeyScript>().Key1NotTrue(key1);
 
-}
+    }
+    }
+    public void Key2ShowUp(){
+            if(spawnVar == 10){
+                print("delete");
+                key2 = true;
+               // gameObject.GetComponent<EquipKeyScript>().Key2NotTrue(key2);
+
+        }
+        }
+    public void Key3ShowUp(){
+            if(spawnVar == 15){
+                print("delete");
+                key3 = false;
+                gameObject.GetComponent<EquipKeyScript>().Key3NotTrue(key3);
+
+        }
+        }
+
 }

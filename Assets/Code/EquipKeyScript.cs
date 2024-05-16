@@ -21,10 +21,10 @@ public class EquipKeyScript : MonoBehaviour
     public Transform cageTransform2;
     public Transform cageTransform3;
     public float useKeyRange;
-    public int var;
     public GameObject cowtext;
     public GameObject clones;
     public int newVar;
+
 
 
 
@@ -39,12 +39,9 @@ public class EquipKeyScript : MonoBehaviour
         fun3 = false;
         move = false;
         cowtext.active = false;
-
-        clones = GameObject.FindWithTag("Enemy");
-            if (clones == null){
-                print("apples");
-                newVar ++;
-            }
+        Key2NotTrue(false);
+        Key3NotTrue(false);
+        //play with getting rid of all the enemy span get component stuff
 
 
 
@@ -56,13 +53,13 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 4 && var <= 5){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
         
         EquipKey();
         fun = true;
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 9 && var <= 10){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
         
         EquipKey2();
         fun2 = true;
@@ -70,7 +67,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 14){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
         
         EquipKey3();
         fun3 = true;
@@ -78,10 +75,6 @@ public class EquipKeyScript : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown("m")){
-
-            var += 1;
-        }
 
         Vector3 keyRange = KeyTransform.position - cageTransform.position;
         Vector3 keyRange2 = KeyTransform.position - cageTransform2.position;
@@ -144,6 +137,37 @@ public class EquipKeyScript : MonoBehaviour
         Key3.transform.SetParent(KeyTransform);
         
     }
+
+    public void Key1NotTrue(bool key1){
+        if(key1){
+        Key.active = true;
+        }
+        if(!key1){
+        Key.active = false;
+        }
+
+    }
+
+      public void Key2NotTrue(bool key2){
+        if(key2){
+        Key2.active = true;
+        }
+        if(!key2){
+        Key2.active = false;
+        }
+
+    }  
+    public void Key3NotTrue(bool key3){
+        if(key3){
+        Key3.active = true;
+        }
+        if(!key3){
+        Key3.active = false;
+        }
+
+    }
+
+
 
 
 
