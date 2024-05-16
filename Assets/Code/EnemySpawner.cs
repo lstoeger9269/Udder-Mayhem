@@ -7,9 +7,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyToClone;
     public GameObject enemy;
     public int spawnVar;
+    public GameObject enemyBox;
 
     
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour
         enemy.active = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)){
@@ -43,5 +42,12 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(enemyToClone, transform.position, transform.rotation);
         spawnVar++;
     }
+    
+    public void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.tag == "Enemy"){
+            spawnVar--;
+    
+    }
 
+}
 }
