@@ -23,7 +23,6 @@ public class EquipKeyScript : MonoBehaviour
     public float useKeyRange;
     public GameObject cowtext;
     public GameObject clones;
-    public int newVar;
 
 
 
@@ -33,7 +32,7 @@ public class EquipKeyScript : MonoBehaviour
 
     void Start()
     {
-        Key.GetComponent<Rigidbody>().isKinematic = true;
+       // Key.GetComponent<Rigidbody>().isKinematic = true;
         fun = false;
         fun2 = false;
         fun3 = false;
@@ -41,10 +40,6 @@ public class EquipKeyScript : MonoBehaviour
         cowtext.active = false;
         Key2NotTrue(false);
         Key3NotTrue(false);
-        //play with getting rid of all the enemy span get component stuff
-
-
-
 
 
     }
@@ -57,6 +52,8 @@ public class EquipKeyScript : MonoBehaviour
         
         EquipKey();
         fun = true;
+
+
 
         }
         if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
@@ -74,6 +71,8 @@ public class EquipKeyScript : MonoBehaviour
      
 
         }
+
+
 
 
         Vector3 keyRange = KeyTransform.position - cageTransform.position;
@@ -96,9 +95,6 @@ public class EquipKeyScript : MonoBehaviour
                 open3.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key3);
-        }
-        if(Input.GetKeyDown(KeyCode.O)){
-            EquipKey();
         }
         
     }
