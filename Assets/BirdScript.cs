@@ -16,6 +16,7 @@ public class BirdScript : MonoBehaviour
     public bool text2 = false;
     public bool text3 = false;
     public bool bugbool = true;
+    public GameObject truckDriver;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class BirdScript : MonoBehaviour
         textbox2.SetActive(false);
         textbox3.SetActive(false);
 
+        truckDriver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,7 +61,7 @@ public class BirdScript : MonoBehaviour
                 anim.SetBool("birdLeave", true);
                 coroutine = BirdDie(3.0f);
                 StartCoroutine(coroutine);
-                gameObject.GetComponent<TruckDriverSpawn>().Spawn();
+                truckDriver.SetActive(true);
             }
         }
     }
