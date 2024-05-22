@@ -1012,7 +1012,7 @@ MonoBehaviour:
   Key2: {fileID: 2077877019}
   Key3: {fileID: 261750110}
   Camera: {fileID: 204316875}
-  pickUpRangeKey: 40
+  pickUpRangeKey: 25
   open: {fileID: 919132148048643120}
   open2: {fileID: 517136014}
   open3: {fileID: 1753275471}
@@ -1025,7 +1025,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 2080329203}
-  newVar: 0
 --- !u!65 &261750114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2433,7 +2432,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 0}
-  newVar: 0
 --- !u!54 &517136016
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2744,7 +2742,6 @@ MonoBehaviour:
   useKeyRange: 0
   cowtext: {fileID: 601159659}
   clones: {fileID: 0}
-  newVar: 0
 --- !u!65 &610778384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3316,7 +3313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
-  newVar: 0
   TakeDamage: 0
   bulletspeed: 100
 --- !u!1001 &715084670
@@ -4476,7 +4472,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 2080329203}
-  newVar: 0
 --- !u!1 &902565036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,7 +4972,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 0}
-  newVar: 0
 --- !u!95 &935380241
 Animator:
   serializedVersion: 4
@@ -7374,7 +7368,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 0}
-  newVar: 0
 --- !u!54 &1753275473
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8671,7 +8664,7 @@ MonoBehaviour:
   Key2: {fileID: 2077877019}
   Key3: {fileID: 261750110}
   Camera: {fileID: 204316875}
-  pickUpRangeKey: 40
+  pickUpRangeKey: 25
   open: {fileID: 919132148048643120}
   open2: {fileID: 517136014}
   open3: {fileID: 1753275471}
@@ -8684,7 +8677,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 2080329203}
-  newVar: 0
 --- !u!65 &2077877023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8748,7 +8740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077877019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.84, y: -0.6000519, z: -7.22}
+  m_LocalPosition: {x: 6.84, y: -0.6000519, z: 82.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8992,7 +8984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148108483170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53, y: -0.6000519, z: -19.33}
+  m_LocalPosition: {x: 6.53, y: -0.6000519, z: -71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9090,7 +9082,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 0}
-  newVar: 0
 --- !u!1 &919132148108483170
 GameObject:
   m_ObjectHideFlags: 0
@@ -9184,7 +9175,7 @@ MonoBehaviour:
   Key2: {fileID: 2077877019}
   Key3: {fileID: 261750110}
   Camera: {fileID: 204316875}
-  pickUpRangeKey: 40
+  pickUpRangeKey: 25
   open: {fileID: 919132148048643120}
   open2: {fileID: 517136014}
   open3: {fileID: 1753275471}
@@ -9197,7 +9188,6 @@ MonoBehaviour:
   useKeyRange: 13
   cowtext: {fileID: 601159659}
   clones: {fileID: 2080329203}
-  newVar: 0
 --- !u!54 &919132148108483174
 Rigidbody:
   m_ObjectHideFlags: 0

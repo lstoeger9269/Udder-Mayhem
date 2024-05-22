@@ -58,8 +58,8 @@ public class EnemySpawner : MonoBehaviour
     }
     
     public void KeyShowUp(){
-        if(spawnVar == 5){
-            print("delete");
+        if(spawnVar <= 5){
+
             key1 = true;
             gameObject.GetComponent<EquipKeyScript>().Key1NotTrue(key1);
 
@@ -69,7 +69,6 @@ public class EnemySpawner : MonoBehaviour
             if(spawnVar == 10){
                 key2 = true;
                 gameObject.GetComponent<EquipKeyScript>().Key2NotTrue(key2);
-                print("delete2");
         }
         }
     public void Key3ShowUp(){

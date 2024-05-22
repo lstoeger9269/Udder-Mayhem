@@ -23,6 +23,7 @@ public class EquipKeyScript : MonoBehaviour
     public float useKeyRange;
     public GameObject cowtext;
     public GameObject clones;
+    public int varible;
 
 
 
@@ -32,14 +33,15 @@ public class EquipKeyScript : MonoBehaviour
 
     void Start()
     {
-       // Key.GetComponent<Rigidbody>().isKinematic = true;
         fun = false;
         fun2 = false;
         fun3 = false;
         move = false;
         cowtext.active = false;
-        Key2NotTrue(false);
-        Key3NotTrue(false);
+        Key1NotTrue(true);
+        //Key2NotTrue(false);
+        //Key3NotTrue(false);
+        varible = 0;
 
 
     }
@@ -48,15 +50,16 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && varible == 0){
         
         EquipKey();
         fun = true;
+        varible += 1;
 
 
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && Key == null){
         
         EquipKey2();
         fun2 = true;
@@ -64,7 +67,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && Key2 == null){
         
         EquipKey3();
         fun3 = true;
@@ -82,7 +85,10 @@ public class EquipKeyScript : MonoBehaviour
         if(Input.GetKeyDown("o") && fun == true && keyRange.magnitude <= useKeyRange){
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
+                Key1NotTrue(false);
                 Destroy(Key);
+                Key = null;
+
 
         }
         
@@ -90,6 +96,7 @@ public class EquipKeyScript : MonoBehaviour
                 open2.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key2);
+                Key2 = null;
         }
         if(Input.GetKeyDown("o") && fun3 == true && keyRange3.magnitude <= useKeyRange){
                 open3.GetComponent<Animator>().Play("cageanimation");
@@ -97,14 +104,6 @@ public class EquipKeyScript : MonoBehaviour
                 Destroy(Key3);
         }
         
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "Key"){
-            EquipKey();
-            Debug.Log("key equiped");
-        }
     }
 
     void EquipKey()
