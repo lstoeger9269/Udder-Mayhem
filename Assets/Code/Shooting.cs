@@ -31,28 +31,28 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ammo >= 0 )
+        if (ammo > 0 )
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
+            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true && reloading == false)
             {
                 
-                if (ammo == 4)
+                if (ammo == 5)
                 {
                     BulletIcon4.active = false;
                 }
-                if (ammo == 3)
+                if (ammo == 4)
                 {
                     BulletIcon3.active = false;
                 }
-                if (ammo == 2)
+                if (ammo == 3)
                 {
                     BulletIcon2.active = false;
                 }
-                if (ammo == 1)
+                if (ammo == 2)
                 {
                     BulletIcon1.active = false;
                 }
-                if (ammo == 0)
+                if (ammo == 1)
                 {
                     BulletIcon.active = false;
                 }
@@ -61,24 +61,28 @@ public class Shooting : MonoBehaviour
                 muzzleFlash.Play();
                 Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
                 source.Play();
-                ammo--;
                 print(ammo);
+                ammo--;
+                
             
 
             }
         }
-        else if (ammo <= 0 && reloading == false)
+        else if (ammo == 0 && reloading == false)
         {
 
-            Invoke ("Reload", 3);
+            StartCoroutine (Reload());
+            
             
         }
         
     }
 
-    public void Reload()
+    public IEnumerator Reload()
     {
+
         reloading = true;
+        yield return new WaitForSeconds(3);
         BulletIcon.active = true;
         BulletIcon1.active = true;
         BulletIcon2.active = true;
