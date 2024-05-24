@@ -21,10 +21,10 @@ public class EquipKeyScript : MonoBehaviour
     public Transform cageTransform2;
     public Transform cageTransform3;
     public float useKeyRange;
-    public int var;
     public GameObject cowtext;
     public GameObject clones;
-    public int newVar;
+    public int varible;
+
 
 
 
@@ -33,21 +33,14 @@ public class EquipKeyScript : MonoBehaviour
 
     void Start()
     {
-        Key.GetComponent<Rigidbody>().isKinematic = true;
         fun = false;
         fun2 = false;
         fun3 = false;
         move = false;
         cowtext.active = false;
-
-        clones = GameObject.FindWithTag("Enemy");
-            if (clones == null){
-                print("apples");
-                newVar ++;
-            }
-
-
-
+        Key2NotTrue(false);
+        Key3NotTrue(false);
+        varible = 0;
 
 
     }
@@ -56,13 +49,16 @@ public class EquipKeyScript : MonoBehaviour
     {
         Vector3 distanceToPlayer = KeyTransform.position - transform.position;
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 4 && var <= 5){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && varible == 0){
         
         EquipKey();
         fun = true;
+        varible += 1;
+
+
 
         }
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 9 && var <= 10){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && Key == null){
         
         EquipKey2();
         fun2 = true;
@@ -70,7 +66,7 @@ public class EquipKeyScript : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && var > 14){
+        if (Input.GetKeyDown("k") && distanceToPlayer.magnitude <= pickUpRangeKey && Key2 == null){
         
         EquipKey3();
         fun3 = true;
@@ -78,10 +74,8 @@ public class EquipKeyScript : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown("m")){
 
-            var += 1;
-        }
+
 
         Vector3 keyRange = KeyTransform.position - cageTransform.position;
         Vector3 keyRange2 = KeyTransform.position - cageTransform2.position;
@@ -90,7 +84,9 @@ public class EquipKeyScript : MonoBehaviour
         if(Input.GetKeyDown("o") && fun == true && keyRange.magnitude <= useKeyRange){
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
-                Destroy(Key);
+                Key.active = false;
+                Key = null;
+
 
         }
         
@@ -98,27 +94,17 @@ public class EquipKeyScript : MonoBehaviour
                 open2.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key2);
+                Key2 = null;
         }
         if(Input.GetKeyDown("o") && fun3 == true && keyRange3.magnitude <= useKeyRange){
                 open3.GetComponent<Animator>().Play("cageanimation");
                 move = true;
                 Destroy(Key3);
         }
-        if(Input.GetKeyDown(KeyCode.O)){
-            EquipKey();
-        }
         
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "Key"){
-            EquipKey();
-            Debug.Log("key equiped");
-        }
-    }
-
-    void EquipKey()
+    public void EquipKey()
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
         Key.transform.position = KeyTransform.transform.position;
@@ -127,7 +113,7 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    void EquipKey2()
+    public void EquipKey2()
     {
         Key2.GetComponent<Rigidbody>().isKinematic = true;
         Key2.transform.position = KeyTransform.transform.position;
@@ -136,7 +122,7 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    void EquipKey3()
+    public void EquipKey3()
     {
         Key3.GetComponent<Rigidbody>().isKinematic = true;
         Key3.transform.position = KeyTransform.transform.position;
@@ -144,6 +130,28 @@ public class EquipKeyScript : MonoBehaviour
         Key3.transform.SetParent(KeyTransform);
         
     }
+
+
+      public void Key2NotTrue(bool key2){
+        if(key2){
+        Key2.active = true;
+        }
+        if(!key2){
+        Key2.active = false;
+        }
+
+    }  
+    public void Key3NotTrue(bool key3){
+        if(key3){
+        Key3.active = true;
+        }
+        if(!key3){
+        Key3.active = false;
+        }
+
+    }
+
+
 
 
 

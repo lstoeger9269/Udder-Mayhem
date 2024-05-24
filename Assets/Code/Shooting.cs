@@ -24,6 +24,8 @@ public class Shooting : MonoBehaviour
     {
         reloading = false;
         source = GetComponent<AudioSource>();
+        ammo = 5;
+        
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class Shooting : MonoBehaviour
     {
         if (ammo > 0 )
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true)
+            if (Input.GetButtonDown("Fire1") && Time.time >= NextTimeToFire && Equip2.holdingGun == true && reloading == false)
             {
                 
                 if (ammo == 5)
@@ -54,11 +56,14 @@ public class Shooting : MonoBehaviour
                 {
                     BulletIcon.active = false;
                 }
-                ammo--;
+                
                 NextTimeToFire = Time.time + 0.5f;
                 muzzleFlash.Play();
                 Instantiate(bulletPrefab,bulletSpawnpos.position,bulletSpawnpos.rotation);
                 source.Play();
+                print(ammo);
+                ammo--;
+                
             
 
             }
@@ -66,21 +71,25 @@ public class Shooting : MonoBehaviour
         else if (ammo == 0 && reloading == false)
         {
 
-            Invoke ("Reload", 3);
-            reloading = false;
+            StartCoroutine (Reload());
+            
+            
         }
         
     }
 
-    public void Reload()
+    public IEnumerator Reload()
     {
+
         reloading = true;
+        yield return new WaitForSeconds(3);
         BulletIcon.active = true;
         BulletIcon1.active = true;
         BulletIcon2.active = true;
         BulletIcon3.active = true;
         BulletIcon4.active = true;
         ammo = 5;
+        reloading = false;
         
 
     }

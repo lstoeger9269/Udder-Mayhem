@@ -22,7 +22,7 @@ public class CowPointIcon : MonoBehaviour
 
     void Start()
     {
-        blockagetext.active = false;
+        blockagetext.SetActive(false);
         enemy.active = false;
 
 
