@@ -38,9 +38,8 @@ public class EquipKeyScript : MonoBehaviour
         fun3 = false;
         move = false;
         cowtext.active = false;
-        Key1NotTrue(true);
-        //Key2NotTrue(false);
-        //Key3NotTrue(false);
+        Key2NotTrue(false);
+        Key3NotTrue(false);
         varible = 0;
 
 
@@ -85,8 +84,7 @@ public class EquipKeyScript : MonoBehaviour
         if(Input.GetKeyDown("o") && fun == true && keyRange.magnitude <= useKeyRange){
                 open.GetComponent<Animator>().Play("cageanimation");
                 move = true;
-                Key1NotTrue(false);
-                Destroy(Key);
+                Key.active = false;
                 Key = null;
 
 
@@ -106,7 +104,7 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    void EquipKey()
+    public void EquipKey()
     {
         Key.GetComponent<Rigidbody>().isKinematic = true;
         Key.transform.position = KeyTransform.transform.position;
@@ -115,7 +113,7 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    void EquipKey2()
+    public void EquipKey2()
     {
         Key2.GetComponent<Rigidbody>().isKinematic = true;
         Key2.transform.position = KeyTransform.transform.position;
@@ -124,7 +122,7 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    void EquipKey3()
+    public void EquipKey3()
     {
         Key3.GetComponent<Rigidbody>().isKinematic = true;
         Key3.transform.position = KeyTransform.transform.position;
@@ -133,15 +131,6 @@ public class EquipKeyScript : MonoBehaviour
         
     }
 
-    public void Key1NotTrue(bool key1){
-        if(key1){
-        Key.active = true;
-        }
-        if(!key1){
-        Key.active = false;
-        }
-
-    }
 
       public void Key2NotTrue(bool key2){
         if(key2){

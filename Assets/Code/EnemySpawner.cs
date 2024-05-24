@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
         enemy.active = true;
         SpawnEnemies();
         enemy.active = false;
-        KeyShowUp();
     }
 
     void Update()
@@ -57,14 +56,7 @@ public class EnemySpawner : MonoBehaviour
         spawnVar++;
     }
     
-    public void KeyShowUp(){
-        if(spawnVar <= 5){
 
-            key1 = true;
-            gameObject.GetComponent<EquipKeyScript>().Key1NotTrue(key1);
-
-    }
-    }
     public void Key2ShowUp(){
             if(spawnVar == 10){
                 key2 = true;
