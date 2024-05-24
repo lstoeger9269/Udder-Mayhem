@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public int EnemyHealth = 20;
     public GameObject bestharm;
     public GameObject enemyguy;
+    public GameObject winScreen;
+    public GameObject text;
 
 
     Animator anim;
@@ -19,6 +21,8 @@ public class Enemy : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody>();
+        winScreen.active = false;
+        text.active = false;
     }
 
     public void TakeDamage(int damageAmount)
@@ -42,6 +46,9 @@ public class Enemy : MonoBehaviour
             else{
                 Destroy(gameObject);
                 bestharm.active = true;
+                winScreen.active = true;
+                text.active = true;
+
             }
             
         }

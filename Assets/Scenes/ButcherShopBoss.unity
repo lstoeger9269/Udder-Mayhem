@@ -12825,7 +12825,7 @@ TextMesh:
   m_Font: {fileID: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4281874488
+    rgba: 4282369320
 --- !u!23 &1882635069
 MeshRenderer:
   m_ObjectHideFlags: 0
