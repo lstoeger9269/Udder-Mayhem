@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Slaughterhouse/Outside.unity
+    path: Assets/Scenes/Outside.unity
     guid: f85b3928b81d84b4dbe36a4513ba69c2
   - enabled: 1
-    path: Assets/Scenes/Slaughterhouse/Slaughterhouse.unity
+    path: Assets/Scenes/Slaughterhouse.unity
     guid: 7182782e39e1b9441bc12f986bd8a077
   - enabled: 1
     path: Assets/Scenes/ButcherShopBoss.unity
