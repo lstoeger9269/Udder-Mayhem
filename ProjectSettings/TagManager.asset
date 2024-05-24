@@ -16,6 +16,7 @@ TagManager:
   - cowbox3
   - Bullet
   - Tree
+  - Road
   layers:
   - Default
   - TransparentFX

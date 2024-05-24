@@ -23,6 +23,8 @@ public class EquipKeyScript : MonoBehaviour
     public float useKeyRange;
     public int var;
     public GameObject cowtext;
+    public GameObject clones;
+    public int newVar;
 
 
 
@@ -37,6 +39,14 @@ public class EquipKeyScript : MonoBehaviour
         fun3 = false;
         move = false;
         cowtext.active = false;
+
+        clones = GameObject.FindWithTag("Enemy");
+            if (clones == null){
+                print("apples");
+                newVar ++;
+            }
+
+
 
 
 
@@ -134,6 +144,8 @@ public class EquipKeyScript : MonoBehaviour
         Key3.transform.SetParent(KeyTransform);
         
     }
+
+
 
 
 
